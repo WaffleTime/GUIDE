@@ -14,7 +14,7 @@
 
 # You should have received a copy of the GNU General Public License
 # along with Selfspy.  If not, see <http://www.gnu.org/licenses/>.
-
+from time import sleep
 from Foundation import NSObject
 from AppKit import NSApplication, NSApp, NSWorkspace
 from Cocoa import (
@@ -115,22 +115,7 @@ class Sniffer:
                 self.last_check_windows = time.time()
                 check_windows = True
             loc = NSEvent.mouseLocation()
-            if event_type == NSLeftMouseDown:
-                check_windows = True
-                todo = lambda: self.mouse_button_hook(1, loc.x, loc.y)
-            elif event_type == NSRightMouseDown:
-                check_windows = True
-                todo = lambda: self.mouse_button_hook(3, loc.x, loc.y)
-            elif event_type == NSScrollWheel:
-                if event.deltaY() > 0:
-                    todo = lambda: self.mouse_button_hook(4, loc.x, loc.y)
-                elif event.deltaY() < 0:
-                    todo = lambda: self.mouse_button_hook(5, loc.x, loc.y)
-                if event.deltaX() > 0:
-                    todo = lambda: self.mouse_button_hook(6, loc.x, loc.y)
-                elif event.deltaX() < 0:
-                    todo = lambda: self.mouse_button_hook(7, loc.x, loc.y)
-            elif event_type == NSKeyDown:
+            if event_type == NSKeyDown:
                 flags = event.modifierFlags()
                 modifiers = []  # OS X api doesn't care it if is left or right
                 if flags & NSControlKeyMask:
@@ -153,42 +138,6 @@ class Sniffer:
                               keycodes.get(character,
                                            character),
                               event.isARepeat())
-            elif event_type == NSMouseMoved:
-                todo = lambda: self.mouse_move_hook(loc.x, loc.y)
-            elif event_type == NSFlagsChanged:
-                # Register leaving this window after animations are done
-                # approx (1 second)
-                self.last_check_windows = (time.time() - FORCE_SCREEN_CHANGE +
-                                           WAIT_ANIMATION)
-                check_windows = True
-            if check_windows:
-                activeApps = self.workspace.runningApplications()
-                for app in activeApps:
-                    if app.isActive():
-                        app_name = app.localizedName()
-                        options = kCGWindowListOptionOnScreenOnly | kCGWindowListExcludeDesktopElements
-                        windowList = CGWindowListCopyWindowInfo(options,
-                                                                kCGNullWindowID)
-                        windowListLowPrio = [
-                            w for w in windowList
-                            if w['kCGWindowLayer'] or not w.get('kCGWindowName', u'')
-                        ]
-                        windowList = [
-                            w for w in windowList
-                            if not w['kCGWindowLayer'] and w.get('kCGWindowName', u'')
-                        ]
-                        windowList = windowList + windowListLowPrio
-                        for window in windowList:
-                            if window['kCGWindowOwnerName'] == app_name:
-                                geometry = window['kCGWindowBounds']
-                                self.screen_hook(window['kCGWindowOwnerName'],
-                                                 window.get('kCGWindowName', u''),
-                                                 geometry['X'],
-                                                 geometry['Y'],
-                                                 geometry['Width'],
-                                                 geometry['Height'])
-                                break
-                        break
             todo()
         except (SystemExit, KeyboardInterrupt):
             AppHelper.stopEventLoop()
@@ -287,13 +236,14 @@ def got_key(keycode, state, string, is_repeat):
     string is the string representation of the key press
     repeat is True if the current key is a repeat sent by the keyboard
     """
-    print("asdfasdfasdfasdfasdfasdfasdf")
-    print(keycode, state, string)
-
+    key_press = "{}-{}-{}".format(keycode, state, string)
+    
+    with open("test.txt", 'w') as file:
+        file.write(key_press)
 
 if (__name__ == "__main__"):
     sniffer = Sniffer()
     sniffer.key_hook = got_key
-
     sniffer.run()
-B
+    while True:
+        sleep(1)
