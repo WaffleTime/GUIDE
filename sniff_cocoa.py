@@ -275,3 +275,24 @@ keycodes = {
     u"\uF746": "Help",
     u"\uF747": "ModeSwitch"
 }
+
+def got_key(keycode, state, string, is_repeat):
+    """ 
+    Receives key-presses and queues them for storage.
+    
+    keycode is the code sent by the keyboard to represent the pressed key
+    state is the list of modifier keys pressed, each modifier key should be represented
+          with capital letters and optionally followed by an underscore and location
+          specifier, i.e: SHIFT or SHIFT_L/SHIFT_R, ALT, CTRL
+    string is the string representation of the key press
+    repeat is True if the current key is a repeat sent by the keyboard
+    """
+    print(keycode, state, string)
+
+
+if (__name__ == "__main__"):
+    sniffer = Sniffer()
+    sniffer.key_hook = got_key
+
+    sniffer.run()
+
