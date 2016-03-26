@@ -1,5 +1,5 @@
 import pyhooked
-
+import os
 
 class UniversalHook(object):
     """
@@ -65,7 +65,7 @@ class WindowsHook(UniversalHook):
         """
         Initializes a WindowsHook object
         """
-        
+        self.listener = Nones
 
     def add_hotkey(self):
         """
