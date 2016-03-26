@@ -78,7 +78,6 @@ class WindowsHook(UniversalHook):
         Initializes a WindowsHook object
         """
         self.hook = pyhooked.hook()
-        self.add_hotkey(["LCtrl", "c"], pyhooked.exiter)
         self.listen_thread = None
 
 

@@ -17,6 +17,7 @@ class hook:
         self.IDs=[]
         self.oldID=0
         self.current_keys=[]
+        self.listening = False
         #Scancodes and a few key codes
         self.keylist=["Null","Esc","1","2","3","4","5","6","7","8","9","0","-","=","Backspace","Tab","Q","W","E","R","T","Y","U","I","O","P","[","]","Return","LCtrl","A","S","D","F","G","H","J","K","L",";","'","`","LShift","\\","Z","X","C","V","B","N","M",",",".","/","RShift","Key*","LAlt","Space","Capslock","F1","F2","F3","F4","F5","F6","F7","F8","F9","F10","Numlock","ScrollLock","KeyHome","Up","KeyPgUp","Key-","Left","Key5","Right","Key+","End","Down","KeyPgDn","KeyIns","KeyDel","SYSRQ","","","F11","F12","","","LWin","RWin","MenuKey","RAlt","RCtrl","PrtSc"]
     def print_event(self,e):
@@ -167,14 +168,14 @@ class hook:
             for h in self.handlers:
                 h(event)
             #return next hook
-            return windll.user32.CallNextHookEx(hook_id, nCode, wParam, lParam)
+            return windll.user32.CallNextHookEx(key_hndlr_hook_id, nCode, wParam, lParam)
         
         CMPFUNC = CFUNCTYPE(c_int, c_int, c_int, POINTER(c_void_p))
         #Make a C pointer
         pointer = CMPFUNC(low_level_handler)
         windll.kernel32.GetModuleHandleW.restype = wintypes.HMODULE
         windll.kernel32.GetModuleHandleW.argtypes = [wintypes.LPCWSTR]
-        hook_id = windll.user32.SetWindowsHookExA(0x00D, pointer,
+        key_hndlr_hook_id = windll.user32.SetWindowsHookExA(0x00D, pointer,
                                              windll.kernel32.GetModuleHandleW(None), 0)
         def low_level_handler_mouse(nCode, wParam, lParam):
             """
@@ -184,20 +185,33 @@ class hook:
             for h in self.handlers:
                 h(event)
             #return next hook
-            return windll.user32.CallNextHookEx(hook_id, nCode, wParam, lParam)
+            return windll.user32.CallNextHookEx(mouse_hndlr_hook_id, nCode, wParam, lParam)
         pointer2 = CMPFUNC(low_level_handler_mouse)
-        hook_id = windll.user32.SetWindowsHookExA(0x0E, pointer2,
+        mouse_hndlr_hook_id = windll.user32.SetWindowsHookExA(0x0E, pointer2,
                                              windll.kernel32.GetModuleHandleW(None), 0)
-        #Remove hook when done
-        atexit.register(windll.user32.UnhookWindowsHookEx, hook_id)
-        while True:
-            msg = windll.user32.GetMessageW(None, 0, 0,0)
-            windll.user32.TranslateMessage(byref(msg))
-            windll.user32.DispatchMessageW(byref(msg))
+
+        # Make sure these hooks are removed when done
+        atexit.register(windll.user32.UnhookWindowsHookEx, key_hndlr_hook_id)
+        atexit.register(windll.user32.UnhookWindowsHookEx, mouse_hndlr_hook_id)
+        # I got this to stop blocking by replacing GetMessageW with PeekMessageW
+        while self.listening:
+            msg = windll.user32.PeekMessageW(None, 0, 0,0, 0x0)
+            #windll.user32.TranslateMessage(byref(msg))
+            #windll.user32.DispatchMessageW(byref(msg))
+
+        # unhook these when finished
+        windll.user32.UnhookWindowsHookEx(key_hndlr_hook_id)
+        windll.user32.UnhookWindowsHookEx(mouse_hndlr_hook_id)
 
     def listen(self):
         """Start listening for hooks"""
-        self.listener()        
+        self.listening = True
+        self.listener()
+
+
+    def stop_listening(self):
+        """Stop listening for hooks"""
+        self.listening = False
     
 def foo(*args):
     """For the example, it prints 'foo'."""
@@ -209,7 +223,7 @@ def exiter():
     raise SystemExit
 if __name__ == '__main__':
     hk=hook()
-    hk.Hotkey(["LCtrl","A"],foo,args=("HI")) # hotkey 0
+    hk.Hotkey(["LCtrl","M"],foo,args=("HI")) # hotkey 0
     hk.Hotkey(["LCtrl","C"],foobar) #hotkey 1
     hk.RemHotKey(1) # or you could use hk.RemHotKey(["LCtrl","B"]) or hk.RemHotKey(foobar)
     hk.Hotkey(['LCtrl','LAlt','C'],exiter) #allows you to exit
