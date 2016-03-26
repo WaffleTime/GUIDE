@@ -1,3 +1,3 @@
-call antlr4 ../../parser/Hotkey.g4
+call antlr4 ../../src/parser/Hotkey.g4
 
-call mv Hotkey* ../../parser
+call mv Hotkey* ../../src/parser
