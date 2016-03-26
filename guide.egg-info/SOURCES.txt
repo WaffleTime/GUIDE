@@ -1,0 +1,9 @@
+scriptExecuter.py
+setup.py
+sniff_cocoa.py
+guide.egg-info/PKG-INFO
+guide.egg-info/SOURCES.txt
+guide.egg-info/dependency_links.txt
+guide.egg-info/entry_points.txt
+guide.egg-info/requires.txt
+guide.egg-info/top_level.txt

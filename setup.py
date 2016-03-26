@@ -13,7 +13,7 @@ if (req_file != None):
 
 setup(name="guide",
       version='0.0.1',
-      packages=['guide'],
+      packages=['.'],
       author="Jake Waffle, Kyle Shoemaker, Gus Tropea",
       description=''.join("""
           Cross-platform IDE that is portable, customizable and supports any language!

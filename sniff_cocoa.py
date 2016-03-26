@@ -36,7 +36,7 @@ from Quartz import (
     kCGNullWindowID
 )
 from PyObjCTools import AppHelper
-import config as cfg
+#import config as cfg
 import signal
 import time
 
@@ -81,8 +81,8 @@ class Sniffer:
                 # application terminates it does not run the rest the
                 # original main, only the code that has crossed the
                 # pyobc bridge.
-                if cfg.LOCK.is_locked():
-                    cfg.LOCK.release()
+               # if cfg.LOCK.is_locked():
+                #    cfg.LOCK.release()
                 print("Exiting")
                 return None
 
@@ -287,6 +287,7 @@ def got_key(keycode, state, string, is_repeat):
     string is the string representation of the key press
     repeat is True if the current key is a repeat sent by the keyboard
     """
+    print("asdfasdfasdfasdfasdfasdfasdf")
     print(keycode, state, string)
 
 
@@ -295,4 +296,4 @@ if (__name__ == "__main__"):
     sniffer.key_hook = got_key
 
     sniffer.run()
-
+B
