@@ -1,5 +1,10 @@
-import pyhooked
 import os
+import threading
+import platform
+import sys
+if __name__ == "__main__":
+    sys.path.append("../")
+from pyreel import pyhooked
 
 class UniversalHook(object):
     """
@@ -15,9 +20,16 @@ class UniversalHook(object):
         """
         raise NotImplemented("UniversalHook is an abstract class")
 
-    def add_hotkey(self):
+    def add_hotkey(self, key_list, callb, args):
         """
         Interface for adding a hotkey
+
+        Will cause the hook to execute callb with args when
+        the associated keys are pressed
+
+        :param key_list: The sequence of keys
+        :param callb: the callback function
+        :param args: the args to send to the callback function
         """
         raise NotImplemented("UniversalHook is an abstract class")
 
@@ -65,31 +77,47 @@ class WindowsHook(UniversalHook):
         """
         Initializes a WindowsHook object
         """
-        self.listener = Nones
+        self.hook = pyhooked.hook()
+        self.add_hotkey(["LCtrl", "c"], pyhooked.exiter)
+        self.listen_thread = None
 
-    def add_hotkey(self):
+
+    def add_hotkey(self, key_list, callb, args=None):
         """
         Interface for adding a hotkey
-        """
-        
 
-    def rm_hotkey(self):
+        Will cause the hook to execute callb with args when
+        the associated keys are pressed
+
+        :param key_list: The sequence of keys
+        :param callb: the callback function
+        :param args: the args to send to the callback function
+        :returns: the hotkey id used for identifying the hotkey added
         """
-        Interface for removing a hotkey
+        return self.hook.Hotkey(key_list, callb, args)
+
+
+    def rm_hotkey(self, hotkey_id):
         """
-        
+        Interface for removing a hotkey associated with the hotkey id
+
+        :param hotkey_id: the id of the hotkey to remove
+        """
+        self.hook.RemHotKey(hotkey_id)
+
 
     def listen(self):
         """
-        Interface for listening to keystrokes and running the provided callback
+        Listen to keystrokes and run the provided callback
         """
-        
+        self.hook.listen()
+
 
     def unhook(self):
         """
-        Interface for "unhooking" all of the keys
+        Interface for stopping the key listening
         """
-        
+        pass
 
 class PyReel(object):
     """
@@ -106,3 +134,6 @@ class PyReel(object):
         :return: The appropriate UniversalHook object
         """
         return WindowsHook()
+
+if __name__ == "__main__":
+    hook = WindowsHook()
