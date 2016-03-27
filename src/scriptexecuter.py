@@ -114,6 +114,3 @@ class Executer:
         self.internal_tools.append(tool)
         logging.info("Internal Tool stored")
         return tool.run
-test = Executer()
-tester = test.create_external_tool("ls")
-tester()
