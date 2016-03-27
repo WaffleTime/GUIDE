@@ -5,7 +5,7 @@ from io import StringIO
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\26")
+        buf.write("\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\27")
         buf.write("u\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b")
         buf.write("\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\3\2\3\2")
         buf.write("\7\2\35\n\2\f\2\16\2 \13\2\3\3\3\3\3\3\3\3\3\4\3\4\3\4")
@@ -20,25 +20,25 @@ def serializedATN():
         buf.write("\2\2\2\f=\3\2\2\2\16J\3\2\2\2\20N\3\2\2\2\22[\3\2\2\2")
         buf.write("\24^\3\2\2\2\26b\3\2\2\2\30j\3\2\2\2\32\36\5\4\3\2\33")
         buf.write("\35\5\f\7\2\34\33\3\2\2\2\35 \3\2\2\2\36\34\3\2\2\2\36")
-        buf.write("\37\3\2\2\2\37\3\3\2\2\2 \36\3\2\2\2!\"\7\3\2\2\"#\7\23")
+        buf.write("\37\3\2\2\2\37\3\3\2\2\2 \36\3\2\2\2!\"\7\3\2\2\"#\7\24")
         buf.write("\2\2#$\5\6\4\2$\5\3\2\2\2%*\5\b\5\2&\'\7\4\2\2\')\5\b")
         buf.write("\5\2(&\3\2\2\2),\3\2\2\2*(\3\2\2\2*+\3\2\2\2+-\3\2\2\2")
         buf.write(",*\3\2\2\2-.\7\5\2\2.\61\3\2\2\2/\61\7\5\2\2\60%\3\2\2")
-        buf.write("\2\60/\3\2\2\2\61\7\3\2\2\2\62\63\7\24\2\2\63\64\7\20")
-        buf.write("\2\2\64\65\5\n\6\2\65\t\3\2\2\2\66<\7\24\2\2\67<\7\25")
+        buf.write("\2\60/\3\2\2\2\61\7\3\2\2\2\62\63\7\25\2\2\63\64\7\21")
+        buf.write("\2\2\64\65\5\n\6\2\65\t\3\2\2\2\66<\7\25\2\2\67<\7\26")
         buf.write("\2\28<\7\6\2\29<\7\7\2\2:<\7\b\2\2;\66\3\2\2\2;\67\3\2")
-        buf.write("\2\2;8\3\2\2\2;9\3\2\2\2;:\3\2\2\2<\13\3\2\2\2=E\7\21")
+        buf.write("\2\2;8\3\2\2\2;9\3\2\2\2;:\3\2\2\2<\13\3\2\2\2=E\7\22")
         buf.write("\2\2>B\5\16\b\2?B\5\20\t\2@B\5\26\f\2A>\3\2\2\2A?\3\2")
         buf.write("\2\2A@\3\2\2\2BD\3\2\2\2CA\3\2\2\2DG\3\2\2\2EC\3\2\2\2")
         buf.write("EF\3\2\2\2FH\3\2\2\2GE\3\2\2\2HI\7\5\2\2I\r\3\2\2\2JK")
-        buf.write("\7\t\2\2KL\7\23\2\2LM\5\6\4\2M\17\3\2\2\2NO\7\n\2\2OP")
-        buf.write("\7\23\2\2PR\5\30\r\2QS\5\22\n\2RQ\3\2\2\2RS\3\2\2\2SU")
+        buf.write("\7\t\2\2KL\7\24\2\2LM\5\6\4\2M\17\3\2\2\2NO\7\n\2\2OP")
+        buf.write("\7\24\2\2PR\5\30\r\2QS\5\22\n\2RQ\3\2\2\2RS\3\2\2\2SU")
         buf.write("\3\2\2\2TV\5\24\13\2UT\3\2\2\2UV\3\2\2\2VW\3\2\2\2WX\7")
-        buf.write("\13\2\2XY\7\22\2\2YZ\7\5\2\2Z\21\3\2\2\2[\\\7\f\2\2\\")
-        buf.write("]\5\6\4\2]\23\3\2\2\2^_\7\r\2\2_`\7\20\2\2`a\7\24\2\2")
-        buf.write("a\25\3\2\2\2bc\7\n\2\2cd\7\23\2\2de\5\30\r\2ef\7\13\2")
-        buf.write("\2fg\7\16\2\2gh\7\23\2\2hi\7\5\2\2i\27\3\2\2\2jk\7\17")
-        buf.write("\2\2kl\7\20\2\2lq\7\23\2\2mn\7\4\2\2np\7\23\2\2om\3\2")
+        buf.write("\13\2\2XY\7\23\2\2YZ\7\5\2\2Z\21\3\2\2\2[\\\7\f\2\2\\")
+        buf.write("]\5\6\4\2]\23\3\2\2\2^_\7\r\2\2_`\7\21\2\2`a\7\25\2\2")
+        buf.write("a\25\3\2\2\2bc\7\n\2\2cd\7\24\2\2de\5\30\r\2ef\7\13\2")
+        buf.write("\2fg\7\16\2\2gh\7\24\2\2hi\7\5\2\2i\27\3\2\2\2jk\7\17")
+        buf.write("\2\2kl\7\20\2\2lq\7\24\2\2mn\7\4\2\2np\7\24\2\2om\3\2")
         buf.write("\2\2ps\3\2\2\2qo\3\2\2\2qr\3\2\2\2r\31\3\2\2\2sq\3\2\2")
         buf.write("\2\13\36*\60;AERUq")
         return buf.getvalue()
@@ -56,12 +56,12 @@ class HotkeyParser ( Parser ):
 
     literalNames = [ "<INVALID>", "'project'", "','", "';'", "'true'", "'false'", 
                      "'null'", "'namespace'", "'hotkey'", "'execute'", "'environment_variables'", 
-                     "'working_directory'", "'>'", "'condition'" ]
+                     "'working_directory'", "'>'", "'condition'", "'is'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "EQUAL", "OPERATING_SYSTEM", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "EQUAL", "OPERATING_SYSTEM", 
                       "COMMAND", "NAME", "STRING", "NUMBER", "WS" ]
 
     RULE_project = 0
@@ -95,13 +95,14 @@ class HotkeyParser ( Parser ):
     T__10=11
     T__11=12
     T__12=13
-    EQUAL=14
-    OPERATING_SYSTEM=15
-    COMMAND=16
-    NAME=17
-    STRING=18
-    NUMBER=19
-    WS=20
+    T__13=14
+    EQUAL=15
+    OPERATING_SYSTEM=16
+    COMMAND=17
+    NAME=18
+    STRING=19
+    NUMBER=20
+    WS=21
 
     def __init__(self, input:TokenStream):
         super().__init__(input)
@@ -835,9 +836,6 @@ class HotkeyParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def EQUAL(self):
-            return self.getToken(HotkeyParser.EQUAL, 0)
-
         def NAME(self, i:int=None):
             if i is None:
                 return self.getTokens(HotkeyParser.NAME)
@@ -868,7 +866,7 @@ class HotkeyParser ( Parser ):
             self.state = 104
             self.match(HotkeyParser.T__12)
             self.state = 105
-            self.match(HotkeyParser.EQUAL)
+            self.match(HotkeyParser.T__13)
             self.state = 106
             self.match(HotkeyParser.NAME)
             self.state = 111

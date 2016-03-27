@@ -60,7 +60,7 @@ custom_script_hotkey
     ;
 
 simultaneous_condition
-    : 'condition' EQUAL NAME (',' NAME)*
+    : 'condition' NAME (',' NAME)*
     ;
 
 

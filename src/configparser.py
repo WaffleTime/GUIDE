@@ -128,4 +128,6 @@ def parse(file_path):
     walker = ParseTreeWalker()
     walker.walk(listener, tree)
 
+
+
     return listener.configuration
