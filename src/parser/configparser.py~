@@ -1,6 +1,6 @@
 import sys
-from antlr4 import *
-from antlr4.InputStream import InputStream
+from parser.antlr4 import *
+from parser.antlr4.InputStream import InputStream
 
 from HotkeyLexer import HotkeyLexer
 from HotkeyParser import HotkeyParser

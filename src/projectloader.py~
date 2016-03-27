@@ -1,0 +1,9 @@
+from parser.configparser  import *
+
+parser(parser/test_config.text)
+
+class Loader:
+    def __init__(parser):
+        self.parser
+        self.projectinfo = parser.
+        
