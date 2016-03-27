@@ -1,3 +1,4 @@
+import tkinter
 import sys
 if __name__ == "__main__":
     sys.path.append("../")
@@ -17,10 +18,10 @@ class GUIManager:
         :param win_id: The unique id for the window to be registered
         :param window: The window to register under the id
         """
-        # validate that this is a Tk window
-        if win_id not in self.windows:
+        if not isinstance(window, tkinter.Tk):
+            raise TypeError("Registered window must be of type tkinter.Tk")
+        elif win_id not in self.windows:
             self.windows[win_id] = window
-
         else:
             raise ValueError("Window id {0} is already registered".format(win_id))
 
@@ -30,5 +31,7 @@ class GUIManager:
         Destroy all the windows
         """
         for win_id in self.windows:
-            #self.windows[win_id].deleteitorwhatever
-            del self.windows[win_id]
+            win = self.windows[win_id]
+            win.quit()
+            win.destroy()
+        self.windows = {}
