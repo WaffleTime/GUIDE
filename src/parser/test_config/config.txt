@@ -1,0 +1,9 @@
+project guide
+	"root_dir" = "../../asdfasdfasdf"
+    ;
+    
+windows:
+	namespace asdfasdf
+		"asdf" = "asdf"
+        ;
+    ;
