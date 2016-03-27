@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a42578f4-cf47-4b91-ab97-cb5aba0b29f0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GUIDE.log" afterPath="$PROJECT_DIR$/GUIDE.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config_files/global.gconf" afterPath="$PROJECT_DIR$/config_files/global.gconf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config_files/proj.gconf" afterPath="$PROJECT_DIR$/config_files/proj.gconf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/user_scripts/display_configurations.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/user_scripts/tkinter_example.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/projectloader.py" afterPath="$PROJECT_DIR$/src/projectloader.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pyreel/keyconverters.py" afterPath="$PROJECT_DIR$/src/pyreel/keyconverters.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scriptexecuter.py" afterPath="$PROJECT_DIR$/src/scriptexecuter.py" />
     </list>
     <ignored path="GUIDE.iws" />
@@ -53,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="projectloader.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="projectloader.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/projectloader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1219">
-              <caret line="73" column="9" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
+            <state relative-caret-position="726">
+              <caret line="124" column="19" selection-start-line="124" selection-start-column="19" selection-end-line="124" selection-end-column="19" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -75,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scriptexecuter.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="scriptexecuter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scriptexecuter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="106" column="68" selection-start-line="106" selection-start-column="68" selection-end-line="106" selection-end-column="68" />
+            <state relative-caret-position="1768">
+              <caret line="107" column="11" selection-start-line="107" selection-start-column="11" selection-end-line="107" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -90,6 +87,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
               <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HotkeyParser.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/HotkeyParser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -157,10 +164,10 @@
         <option value="$PROJECT_DIR$/config_files/global.gconf" />
         <option value="$PROJECT_DIR$/src/pyreel/keyconverters.py" />
         <option value="$PROJECT_DIR$/src/pyreel/keyfisher.py" />
-        <option value="$PROJECT_DIR$/src/projectloader.py" />
         <option value="$PROJECT_DIR$/config_files/proj.gconf" />
         <option value="$PROJECT_DIR$/test2.bat" />
         <option value="$PROJECT_DIR$/src/scriptexecuter.py" />
+        <option value="$PROJECT_DIR$/src/projectloader.py" />
       </list>
     </option>
   </component>
@@ -466,7 +473,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -564,14 +571,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/HotkeyParser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/data/osconfig.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -656,21 +655,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/projectloader.py">
+    <entry file="file://$PROJECT_DIR$/src/scriptexecuter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1219">
-          <caret line="73" column="9" selection-start-line="73" selection-start-column="9" selection-end-line="73" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1768">
+          <caret line="107" column="11" selection-start-line="107" selection-start-column="11" selection-end-line="107" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scriptexecuter.py">
+    <entry file="file://$PROJECT_DIR$/src/HotkeyParser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="106" column="68" selection-start-line="106" selection-start-column="68" selection-end-line="106" selection-end-column="68" />
+        <state relative-caret-position="357">
+          <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projectloader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="124" column="19" selection-start-line="124" selection-start-column="19" selection-end-line="124" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
