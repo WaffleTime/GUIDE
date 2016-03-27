@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a42578f4-cf47-4b91-ab97-cb5aba0b29f0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/projectloader.py" afterPath="$PROJECT_DIR$/src/projectloader.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config_files/global.gconf" afterPath="$PROJECT_DIR$/config_files/global.gconf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config_files/proj.gconf" afterPath="$PROJECT_DIR$/config_files/proj.gconf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Hotkey.g4" afterPath="$PROJECT_DIR$/src/Hotkey.g4" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Hotkey.tokens" afterPath="$PROJECT_DIR$/src/Hotkey.tokens" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HotkeyLexer.py" afterPath="$PROJECT_DIR$/src/HotkeyLexer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HotkeyLexer.tokens" afterPath="$PROJECT_DIR$/src/HotkeyLexer.tokens" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HotkeyParser.py" afterPath="$PROJECT_DIR$/src/HotkeyParser.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/configparser.py" afterPath="$PROJECT_DIR$/src/configparser.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scriptexecuter.py" afterPath="$PROJECT_DIR$/src/scriptexecuter.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/config_files/config.gconf" afterPath="$PROJECT_DIR$/config_files/proj.gconf" />
     </list>
     <ignored path="GUIDE.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,86 +32,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Hotkey.g4" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Hotkey.g4">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="47" column="28" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="proj.gconf" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config_files/proj.gconf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="global.gconf" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config_files/global.gconf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="projectloader.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/projectloader.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="67" column="9" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.bat" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.bat">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="82" selection-start-line="0" selection-start-column="82" selection-end-line="0" selection-end-column="82" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="configparser.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/configparser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="53" column="57" selection-start-line="53" selection-start-column="57" selection-end-line="53" selection-end-column="57" />
+            <state relative-caret-position="369">
+              <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
               <folding>
-                <marker date="1459073428504" expanded="true" signature="0:127" placeholder="import ..." />
-                <marker date="1459073428504" expanded="true" signature="446:1502" placeholder="..." />
-                <marker date="1459073428504" expanded="true" signature="470:617" placeholder="..." />
-                <marker date="1459073428504" expanded="true" signature="685:822" placeholder="..." />
-                <marker date="1459073428504" expanded="true" signature="694:770" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1459073428504" expanded="true" signature="878:1039" placeholder="..." />
-                <marker date="1459073428504" expanded="true" signature="887:987" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1459073428504" expanded="true" signature="1103:1433" placeholder="..." />
-                <marker date="1459073428504" expanded="true" signature="1112:1188" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-                <marker date="1459073428504" expanded="true" signature="1242:1394" placeholder="..." />
-                <marker date="1459073428504" expanded="true" signature="1501:1502" placeholder="..." />
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Hotkey.g4" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Hotkey.g4">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="51" column="28" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scriptexecuter.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scriptexecuter.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="osconfig.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/data/osconfig.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="34" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HotkeyParser.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/HotkeyParser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4862">
+              <caret line="21" column="52" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -133,14 +108,15 @@
         <option value="$PROJECT_DIR$/src/main.py" />
         <option value="$PROJECT_DIR$/src/__init__.py" />
         <option value="$PROJECT_DIR$/src/test_config/config.txt" />
-        <option value="$PROJECT_DIR$/src/configparser.py" />
-        <option value="$PROJECT_DIR$/src/Hotkey.g4" />
         <option value="$PROJECT_DIR$/config_files/config.txt" />
         <option value="$PROJECT_DIR$/config_files/config.gconf" />
-        <option value="$PROJECT_DIR$/src/projectloader.py" />
         <option value="$PROJECT_DIR$/test.bat" />
         <option value="$PROJECT_DIR$/config_files/global.gconf" />
         <option value="$PROJECT_DIR$/config_files/proj.gconf" />
+        <option value="$PROJECT_DIR$/src/projectloader.py" />
+        <option value="$PROJECT_DIR$/src/scriptexecuter.py" />
+        <option value="$PROJECT_DIR$/src/configparser.py" />
+        <option value="$PROJECT_DIR$/src/Hotkey.g4" />
       </list>
     </option>
   </component>
@@ -224,6 +200,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GUIDE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GUIDE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -756,34 +750,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/configparser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="57" selection-start-line="53" selection-start-column="57" selection-end-line="53" selection-end-column="57" />
-          <folding>
-            <marker date="1459073428504" expanded="true" signature="0:127" placeholder="import ..." />
-            <marker date="1459073428504" expanded="true" signature="446:1502" placeholder="..." />
-            <marker date="1459073428504" expanded="true" signature="470:617" placeholder="..." />
-            <marker date="1459073428504" expanded="true" signature="685:822" placeholder="..." />
-            <marker date="1459073428504" expanded="true" signature="694:770" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1459073428504" expanded="true" signature="878:1039" placeholder="..." />
-            <marker date="1459073428504" expanded="true" signature="887:987" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1459073428504" expanded="true" signature="1103:1433" placeholder="..." />
-            <marker date="1459073428504" expanded="true" signature="1112:1188" placeholder="&quot;&quot;&quot;...&quot;&quot;&quot;" />
-            <marker date="1459073428504" expanded="true" signature="1242:1394" placeholder="..." />
-            <marker date="1459073428504" expanded="true" signature="1501:1502" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Hotkey.g4">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="47" column="28" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test.bat">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -810,11 +776,61 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/projectloader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="67" column="9" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+        <state relative-caret-position="1275">
+          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/guimanager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/osconfig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HotkeyParser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4862">
+          <caret line="21" column="52" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scriptexecuter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/configparser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Hotkey.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="51" column="28" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>

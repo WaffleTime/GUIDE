@@ -10,9 +10,9 @@ windows:
 		"password"  = "testPassword"
         ;
 
-    hotkey explorer
+    external_hotkey explorer
         condition LCtrl, r
         working_directory = "./"
-        executable $explorer ./
+        execute = "explorer ./"
         ;
     ;

@@ -24,6 +24,10 @@ class ExternalTool:
         :param env_variables: enviornment variables being past to the shell
         :return: returns nothing
         """
+        print("command:", command)
+        print("working_dir:", working_dir)
+        print("env_variables:", env_variables)
+
         self.command = command
         self.working_dir = working_dir
         self.env_variables = env_variables

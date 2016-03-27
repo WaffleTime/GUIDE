@@ -81,7 +81,8 @@ class HotkeyEmitter(HotkeyListener):
                 hotkey.name         = hotkey_ctx.NAME().getText()
 
                 env_vars_ctx        = hotkey_ctx.environment_vars()
-                hotkey.env_vars     = self.dictionaries[env_vars_ctx.dictionary()]
+                if (env_vars_ctx != None):
+                    hotkey.env_vars     = self.dictionaries[env_vars_ctx.dictionary()]
 
                 conditions_ctx      = hotkey_ctx.simultaneous_condition()
                 conditions          = []
@@ -92,11 +93,15 @@ class HotkeyEmitter(HotkeyListener):
                 hotkey.condition    = conditions
 
                 working_dir_ctx     = hotkey_ctx.working_dir()
-                hotkey.working_dir  = working_dir_ctx.STRING()
+                if (working_dir_ctx != None):
+                    hotkey.working_dir  = working_dir_ctx.STRING().getText().strip("\"")
 
-                hotkey.executable   = hotkey_ctx.NAME().getText().strip("$")
+                hotkey.executable = hotkey_ctx.STRING().getText().strip("\"")
 
-                os_config.hotkeys[hotkey.name] = hotkey
+                import pdb
+                pdb.set_trace()
+
+                os_config.external_tool_hotkeys[hotkey.name] = hotkey
 
             for hotkey_ctx in config_ctx.custom_script_hotkey():
                 hotkey              = CustomScriptHotkey()
@@ -111,9 +116,9 @@ class HotkeyEmitter(HotkeyListener):
 
                 hotkey.condition = conditions
 
-                hotkey.executable = hotkey_ctx.COMMAND().strip("$")
+                hotkey.executable = hotkey_ctx.STRING().getText().strip("\"")
 
-                os_config.hotkeys[hotkey.name] = hotkey
+                os_config.custom_script_hotkeys[hotkey.name] = hotkey
 
             self.configuration.os_configs[self.current_os] = os_config
 
