@@ -1,0 +1,24 @@
+from sys import platform as _platform
+from parser.configparser  import *
+
+#parser(parser/test_config.text)
+
+class Loader:
+    def __init__(self, parser):
+        self.parser = parser
+        self.osconfigs = self.parser.osconfigs
+        self.systemcfg = self.osconfigs.os
+        self.globalcfg = self.osconfigs.get("global", None)
+
+    def setSystem(self):
+        if _platform == "linux" or _platform == "linux2":
+            print("linux")
+            return self.osconfigs.get("linux", None)
+        elif _platform == "darwin":
+            print("osx")
+            return self.osconfigs.get"osx", None)
+        elif _platform == "win32":
+            print("windows")
+            return self.osconfigs.get("windows", None)
+
+load = Loader(parser/test_config.txt)

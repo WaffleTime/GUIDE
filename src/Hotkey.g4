@@ -10,7 +10,7 @@ project_info
     ;
 
 dictionary
-    :   pair (',' pair)* ';'        # AnObject
+    :   pair (',' pair)*  ';'       # AnObject
     |   ';'                         # EmptyObject
     ;
 
@@ -36,11 +36,11 @@ namespace
     ;
 
 external_tool_hotkey
-    : 'hotkey' NAME
+    : 'external_hotkey' NAME
           simultaneous_condition
           (environment_vars)?
           (working_dir)?
-          'execute' COMMAND
+          'executable' EQUAL STRING
           ';'
     ;
 
@@ -53,14 +53,14 @@ working_dir
     ;
 
 custom_script_hotkey
-    : 'hotkey' NAME
+    : 'internal_hotkey' NAME
           simultaneous_condition
-          'execute' '>' NAME
+          'executable' EQUAL STRING
           ';'
     ;
 
 simultaneous_condition
-    : 'condition' EQUAL NAME (',' NAME)*
+    : 'condition' NAME (',' NAME)*
     ;
 
 
@@ -68,9 +68,7 @@ EQUAL : ('is' | '=');
 
 OPERATING_SYSTEM : ('global:' | 'windows:' | 'linux:' | 'osx:');
 
-COMMAND : '$' ~('\r' | '\n')+ ;
-
-NAME : ~('\r' | '\n' | '"' | ' ')+ ;
+NAME : [a-zA-Z0-9_-]+ ;
 
 STRING :  '"' ~('\r' | '\n' | '"')* '"' ;
 

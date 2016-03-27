@@ -1,0 +1,18 @@
+project guide
+	"root_dir" = "../"
+    ;
+    
+windows:
+	namespace Useful_Information
+		"host"      = "localhost",
+		"port"      = "9999",
+		"username"  = "testUser",
+		"password"  = "testPassword"
+        ;
+
+    external_hotkey explorer
+        condition LCtrl, r
+        working_directory = "./"
+        executable = "explorer ./"
+        ;
+    ;

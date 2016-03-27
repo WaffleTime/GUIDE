@@ -222,6 +222,7 @@ class WindowsHook(UniversalHook):
         """
         key_list = self.key_conv.convert_keys(key_list)
         print("Converted keys: {0}".format(key_list))
+        print("Callback: {}".format(callb))
         return self.hook.Hotkey(key_list, callb, args)
 
 

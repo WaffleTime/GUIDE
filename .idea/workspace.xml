@@ -2,77 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a42578f4-cf47-4b91-ab97-cb5aba0b29f0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/Hotkey.g4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/Hotkey.tokens" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/HotkeyLexer.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/HotkeyLexer.tokens" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/HotkeyListener.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/HotkeyParser.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/BufferedTokenStream.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/CommonTokenFactory.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/CommonTokenStream.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/FileStream.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/InputStream.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/IntervalSet.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/LL1Analyzer.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/Lexer.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/ListTokenSource.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/Parser.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/ParserInterpreter.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/ParserRuleContext.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/PredictionContext.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/Recognizer.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/RuleContext.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/Token.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/Utils.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/ATN.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/ATNConfig.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/ATNConfigSet.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/ATNDeserializationOptions.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/ATNDeserializer.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/ATNSimulator.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/ATNState.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/ATNType.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/LexerATNSimulator.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/LexerAction.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/LexerActionExecutor.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/ParserATNSimulator.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/PredictionMode.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/SemanticContext.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/Transition.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/dfa/DFA.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/dfa/DFASerializer.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/dfa/DFAState.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/dfa/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/error/DiagnosticErrorListener.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/error/ErrorListener.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/error/ErrorStrategy.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/error/Errors.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/error/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/tree/Chunk.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/tree/ParseTreeMatch.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/tree/ParseTreePattern.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/tree/ParseTreePatternMatcher.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/tree/RuleTagToken.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/tree/TokenTagToken.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/tree/Tree.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/tree/Trees.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/tree/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/xpath/XPath.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/xpath/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/configparser.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/data/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/data/configuration.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/data/customscripthotkey.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/data/externaltoolhotkey.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/data/osconfig.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/data/projectinfo.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/test_config/config.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/parser/build_grammar.bat" afterPath="$PROJECT_DIR$/tools/parser/build_grammar.bat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GUIDE.log" afterPath="$PROJECT_DIR$/GUIDE.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/projectloader.py" afterPath="$PROJECT_DIR$/src/projectloader.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pyreel/keyfisher.py" afterPath="$PROJECT_DIR$/src/pyreel/keyfisher.py" />
     </list>
     <ignored path="GUIDE.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -93,11 +26,77 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/__init__.py">
+      <file leaf-file-name="configparser.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/configparser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="437">
+              <caret line="123" column="35" selection-start-line="123" selection-start-column="35" selection-end-line="123" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="keyfisher.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pyreel/keyfisher.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="522">
+              <caret line="231" column="0" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="projectloader.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/projectloader.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="590">
+              <caret line="81" column="33" selection-start-line="81" selection-start-column="33" selection-end-line="81" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Hotkey.g4" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Hotkey.g4">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="743">
+              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="scriptexecuter.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scriptexecuter.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="675">
+              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="osconfig.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/data/osconfig.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HotkeyParser.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/HotkeyParser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4862">
+              <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -126,6 +125,17 @@
         <option value="$PROJECT_DIR$/src/parser/configparser.py" />
         <option value="$PROJECT_DIR$/src/main.py" />
         <option value="$PROJECT_DIR$/src/__init__.py" />
+        <option value="$PROJECT_DIR$/src/test_config/config.txt" />
+        <option value="$PROJECT_DIR$/config_files/config.txt" />
+        <option value="$PROJECT_DIR$/config_files/config.gconf" />
+        <option value="$PROJECT_DIR$/test.bat" />
+        <option value="$PROJECT_DIR$/config_files/global.gconf" />
+        <option value="$PROJECT_DIR$/config_files/proj.gconf" />
+        <option value="$PROJECT_DIR$/src/Hotkey.g4" />
+        <option value="$PROJECT_DIR$/src/configparser.py" />
+        <option value="$PROJECT_DIR$/src/scriptexecuter.py" />
+        <option value="$PROJECT_DIR$/src/projectloader.py" />
+        <option value="$PROJECT_DIR$/src/pyreel/keyfisher.py" />
       </list>
     </option>
   </component>
@@ -212,6 +222,56 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GUIDE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GUIDE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pyreel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GUIDE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GUIDE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GUIDE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GUIDE" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config_files" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -220,7 +280,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Projects\GUIDE\config_files" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Projects\GUIDE\config_files" />
       <recent name="F:\Projects\GUIDE\src\parser\data" />
     </key>
   </component>
@@ -378,9 +442,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -720,6 +784,100 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="82" selection-start-line="0" selection-start-column="82" selection-end-line="0" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_files/global.gconf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config_files/proj.gconf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/guimanager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HotkeyParser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4862">
+          <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/osconfig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="40" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/configparser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="123" column="35" selection-start-line="123" selection-start-column="35" selection-end-line="123" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Hotkey.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="743">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scriptexecuter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/projectloader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="590">
+          <caret line="81" column="33" selection-start-line="81" selection-start-column="33" selection-end-line="81" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pyreel/keyfisher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="231" column="0" selection-start-line="231" selection-start-column="0" selection-end-line="231" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
