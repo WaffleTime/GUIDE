@@ -1,3 +1,8 @@
+"""
+Project loader module
+author: Gus Tropea, Jake Waffle
+"""
+
 from sys import platform as _platform
 import sys
 sys.path.append("../antlr4")

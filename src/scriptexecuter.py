@@ -45,6 +45,7 @@ class ExternalTool:
         elif (len(command) > 0):
             self.command = [command]
 
+        self.command = command
         self.working_dir = working_dir
         self.env_variables = env_variables
     
@@ -57,6 +58,7 @@ class ExternalTool:
         logging.debug("Working Dir: {}".format(self.working_dir))
         logging.debug("Env Vars: {}".format(self.env_variables))
         logging.debug("")
+        
         try:
             runner = Popen(self.command, stdout=PIPE, stderr=PIPE, env=self.env_variables, cwd=self.working_dir, shell=True)
             data, err = runner.communicate()
@@ -67,9 +69,7 @@ class ExternalTool:
         except Exception as e:
             logging.error(" Uhgg! this isn't working!... but {} is not a valid command so thats probably why!".format(self.command), e)
 
-
 class InternalTool:
-
     def __init__(self, project_config, global_config, path, gui):
         """
         Construct a new 'Internal Tools' object.
@@ -112,6 +112,42 @@ class InternalTool:
             logging.error(" Problem executing custom user script", e)
 
         self.gui.cleanup_windows()
+        
+        def __init__(self, project_config, global_config, path, gui):
+            """
+            Construct a new 'Internal Tools' object.
+            :param projec_config: preset information about the project
+            :param global_config: preset informaiton about the global environment
+            :param path: path to internal python scipt
+            :param gui:  gui object
+            :return: returns nothing
+            """
+        
+            self.project_config = project_config
+            self.global_config = global_config
+            self.path = path
+            self.gui = gui
+        
+        
+        def run(self):
+            """
+            Method starts internal python script.
+            """
+            convert = self.path.replace('\\','/')
+            module_name = ""
+            for i in convert.split('/'):
+                if i.endswith(".py"):
+                    module_name += i.split(".py")[0]
+            try:
+                spec = importlib.util.spec_from_file_location(module_name, self.path)
+                mod  = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(mod)
+                mod.run(self.global_config, self.project_config, self.gui)
+                logging.info(" "+module_name+" started successfully!")
+            except:
+                raise
+                
+            self.gui.cleanup_windows()
 
 class Executer:
     def __init__(self):
