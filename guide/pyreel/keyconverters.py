@@ -73,7 +73,7 @@ class KeyConverter(object):
                 new_keys_list.append(self.special_key_table[key])
 
             elif key in self.supported_keys:
-                new_keys_list.append(self.supported_keys[key])
+                new_keys_list.append(key)
 
             else:
                 raise ValueError("The key {0} is not supported".format(key))

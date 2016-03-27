@@ -117,6 +117,7 @@ class hook:
     def Hotkey(self,list=[],fhot=None,args=None):
         """Adds a new hotkey. Definition: Hotkey(list=[],fhot=None) where list is the list of
         keys and fhot is the callback function"""
+        hook_id = self.oldID
         if not (args is None):
             self.IDs.append([self.oldID,list,fhot,args])
         else:
@@ -127,6 +128,7 @@ class hook:
         elif len(self.IDs)==1:
             self.handlers.append(self.print_event)
             return (self.oldID-1)
+        return hook_id
     def RemHotKey(self,hkey):
         """Remove a hotkey. Specify the id, the key list, or the function to remove the hotkey."""
         if str(type(hkey))=="<type 'int'>":
