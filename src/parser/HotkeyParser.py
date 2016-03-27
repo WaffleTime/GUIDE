@@ -21,25 +21,25 @@ def serializedATN():
         buf.write("\2\2\2\24_\3\2\2\2\26c\3\2\2\2\30k\3\2\2\2\32\36\5\4\3")
         buf.write("\2\33\35\5\f\7\2\34\33\3\2\2\2\35 \3\2\2\2\36\34\3\2\2")
         buf.write("\2\36\37\3\2\2\2\37\3\3\2\2\2 \36\3\2\2\2!\"\7\3\2\2\"")
-        buf.write("#\7\24\2\2#$\5\6\4\2$\5\3\2\2\2%*\5\b\5\2&\'\7\4\2\2\'")
+        buf.write("#\7\22\2\2#$\5\6\4\2$\5\3\2\2\2%*\5\b\5\2&\'\7\4\2\2\'")
         buf.write(")\5\b\5\2(&\3\2\2\2),\3\2\2\2*(\3\2\2\2*+\3\2\2\2+-\3")
         buf.write("\2\2\2,*\3\2\2\2-.\7\5\2\2.\61\3\2\2\2/\61\7\5\2\2\60")
-        buf.write("%\3\2\2\2\60/\3\2\2\2\61\7\3\2\2\2\62\63\7\25\2\2\63\64")
-        buf.write("\7\21\2\2\64\65\5\n\6\2\65\t\3\2\2\2\66<\7\25\2\2\67<")
-        buf.write("\7\26\2\28<\7\6\2\29<\7\7\2\2:<\7\b\2\2;\66\3\2\2\2;\67")
+        buf.write("%\3\2\2\2\60/\3\2\2\2\61\7\3\2\2\2\62\63\7\23\2\2\63\64")
+        buf.write("\7\24\2\2\64\65\5\n\6\2\65\t\3\2\2\2\66<\7\23\2\2\67<")
+        buf.write("\7\25\2\28<\7\6\2\29<\7\7\2\2:<\7\b\2\2;\66\3\2\2\2;\67")
         buf.write("\3\2\2\2;8\3\2\2\2;9\3\2\2\2;:\3\2\2\2<\13\3\2\2\2=E\7")
-        buf.write("\22\2\2>B\5\16\b\2?B\5\20\t\2@B\5\26\f\2A>\3\2\2\2A?\3")
+        buf.write("\26\2\2>B\5\16\b\2?B\5\20\t\2@B\5\26\f\2A>\3\2\2\2A?\3")
         buf.write("\2\2\2A@\3\2\2\2BD\3\2\2\2CA\3\2\2\2DG\3\2\2\2EC\3\2\2")
         buf.write("\2EF\3\2\2\2FH\3\2\2\2GE\3\2\2\2HI\7\5\2\2I\r\3\2\2\2")
-        buf.write("JK\7\t\2\2KL\7\24\2\2LM\5\6\4\2M\17\3\2\2\2NO\7\n\2\2")
-        buf.write("OP\7\24\2\2PR\5\30\r\2QS\5\22\n\2RQ\3\2\2\2RS\3\2\2\2")
+        buf.write("JK\7\t\2\2KL\7\22\2\2LM\5\6\4\2M\17\3\2\2\2NO\7\n\2\2")
+        buf.write("OP\7\22\2\2PR\5\30\r\2QS\5\22\n\2RQ\3\2\2\2RS\3\2\2\2")
         buf.write("SU\3\2\2\2TV\5\24\13\2UT\3\2\2\2UV\3\2\2\2VW\3\2\2\2W")
-        buf.write("X\7\13\2\2XY\7\f\2\2YZ\7\23\2\2Z[\7\5\2\2[\21\3\2\2\2")
-        buf.write("\\]\7\r\2\2]^\5\6\4\2^\23\3\2\2\2_`\7\16\2\2`a\7\21\2")
-        buf.write("\2ab\7\25\2\2b\25\3\2\2\2cd\7\n\2\2de\7\24\2\2ef\5\30")
-        buf.write("\r\2fg\7\13\2\2gh\7\17\2\2hi\7\23\2\2ij\7\5\2\2j\27\3")
-        buf.write("\2\2\2kl\7\20\2\2lm\7\21\2\2mr\7\24\2\2no\7\4\2\2oq\7")
-        buf.write("\24\2\2pn\3\2\2\2qt\3\2\2\2rp\3\2\2\2rs\3\2\2\2s\31\3")
+        buf.write("X\7\13\2\2XY\7\f\2\2YZ\7\27\2\2Z[\7\5\2\2[\21\3\2\2\2")
+        buf.write("\\]\7\r\2\2]^\5\6\4\2^\23\3\2\2\2_`\7\16\2\2`a\7\24\2")
+        buf.write("\2ab\7\23\2\2b\25\3\2\2\2cd\7\n\2\2de\7\22\2\2ef\5\30")
+        buf.write("\r\2fg\7\13\2\2gh\7\17\2\2hi\7\22\2\2ij\7\5\2\2j\27\3")
+        buf.write("\2\2\2kl\7\20\2\2lm\7\24\2\2mr\7\22\2\2no\7\4\2\2oq\7")
+        buf.write("\22\2\2pn\3\2\2\2qt\3\2\2\2rp\3\2\2\2rs\3\2\2\2s\31\3")
         buf.write("\2\2\2tr\3\2\2\2\13\36*\60;AERUr")
         return buf.getvalue()
 
@@ -62,8 +62,8 @@ class HotkeyParser ( Parser ):
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "EQUAL", "OPERATING_SYSTEM", 
-                      "COMMAND", "NAME", "STRING", "NUMBER", "WS" ]
+                      "<INVALID>", "<INVALID>", "<INVALID>", "WS", "NAME", 
+                      "STRING", "EQUAL", "NUMBER", "OPERATING_SYSTEM", "COMMAND" ]
 
     RULE_project = 0
     RULE_project_info = 1
@@ -97,13 +97,13 @@ class HotkeyParser ( Parser ):
     T__11=12
     T__12=13
     T__13=14
-    EQUAL=15
-    OPERATING_SYSTEM=16
-    COMMAND=17
-    NAME=18
-    STRING=19
-    NUMBER=20
-    WS=21
+    WS=15
+    NAME=16
+    STRING=17
+    EQUAL=18
+    NUMBER=19
+    OPERATING_SYSTEM=20
+    COMMAND=21
 
     def __init__(self, input:TokenStream):
         super().__init__(input)
@@ -781,15 +781,15 @@ class HotkeyParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def NAME(self):
-            return self.getToken(HotkeyParser.NAME, 0)
+        def NAME(self, i:int=None):
+            if i is None:
+                return self.getTokens(HotkeyParser.NAME)
+            else:
+                return self.getToken(HotkeyParser.NAME, i)
 
         def simultaneous_condition(self):
             return self.getTypedRuleContext(HotkeyParser.Simultaneous_conditionContext,0)
 
-
-        def COMMAND(self):
-            return self.getToken(HotkeyParser.COMMAND, 0)
 
         def getRuleIndex(self):
             return HotkeyParser.RULE_custom_script_hotkey
@@ -822,7 +822,7 @@ class HotkeyParser ( Parser ):
             self.state = 101
             self.match(HotkeyParser.T__12)
             self.state = 102
-            self.match(HotkeyParser.COMMAND)
+            self.match(HotkeyParser.NAME)
             self.state = 103
             self.match(HotkeyParser.T__2)
         except RecognitionException as re:

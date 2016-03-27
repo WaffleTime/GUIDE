@@ -49,7 +49,7 @@ class HotkeyEmitter(HotkeyListener):
         self.dictionaries[ctx] = dict
         
     def enterConfig(self, ctx:HotkeyParser.ConfigContext):
-        self.current_os = ctx.OPERATING_SYSTEM()
+        self.current_os = ctx.OPERATING_SYSTEM().strip(":")
     
     def enterEmptyObject(self, ctx:HotkeyParser.EmptyObjectContext):
         """
@@ -90,16 +90,15 @@ class HotkeyEmitter(HotkeyListener):
                 conditions_ctx      = hotkey_ctx.simultaneous_condition()
                 conditions          = []
 
-                asdfasdfasdfasdf
                 for condition_ctx in conditions_ctx.NAME():
-                    conditions.append(condition_ctx.NAME().getText())
+                    conditions.append(condition_ctx.getText())
 
                 hotkey.condition    = conditions
 
                 working_dir_ctx     = hotkey_ctx.working_dir()
                 hotkey.working_dir  = working_dir_ctx.STRING()
 
-                hotkey.executable   = hotkey_ctx.NAME().getText()
+                hotkey.executable   = hotkey_ctx.NAME().getText().strip("$")
 
                 os_config.hotkeys[hotkey.name] = hotkey
 
@@ -112,7 +111,7 @@ class HotkeyEmitter(HotkeyListener):
                 conditions = []
 
                 for condition_ctx in conditions_ctx.NAME():
-                    conditions.append(condition_ctx.NAME().getText())
+                    conditions.append(condition_ctx.getText())
 
                 hotkey.condition = conditions
 
