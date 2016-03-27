@@ -5,14 +5,14 @@ import sys
 if __name__ == "__main__":
     sys.path.append("../")
 
-if platform.system() == "Windows":
-    from pyreel import pyhooked
 
-elif platform.system() == "Linux":
-    from pyreel.pyxhook import pyxhook
+class KeyHandler(object):
+    """
+    
+    """
+    def __init__(self):
+        pass
 
-else:
-    raise Exception("OS {0} is not supported".format(platform.system()))
 
 class UniversalHook(object):
     """
@@ -95,6 +95,18 @@ class LinuxHook(UniversalHook):
                 self.callb()
 
 
+        def has_keys(self, keydict):
+            """
+            Checks the keys in keydict against the keys of the hotkey
+
+            :param keydict: dictionary of keys currently held down
+            """
+            for key in self.keys_list:
+                if not self.keydict.get(key, False):
+                    return False
+            return True
+
+
     def __init__(self):
         """
         Initializes a LinuxHook object
@@ -102,10 +114,11 @@ class LinuxHook(UniversalHook):
         LinuxHook objects should have a hook of some kind for handling
         the keystrokes
         """
-        self.hook = None
+        self.hook = pyxhook.HookManager()
         self.hotkeys = []
         self.listening = False
         self.listen_thread = None
+        self.keydict = {}
 
 
     def add_hotkey(self, key_list, callb, args=None):
@@ -133,10 +146,36 @@ class LinuxHook(UniversalHook):
         self.hotkeys.pop(hotkey_id)
 
 
+    def _key_down_handler(self, event):
+        """
+        Handles the key down event of pyxhook
+        :param event: object for representing key pressed event
+                      (see pyxhook.pyxhookkeyevent)
+        """
+        # this will need looked up using the ascii value or a lookup table
+        self.keydict[event.Key] = True
+
+
+    def _key_up_handler(self, event):
+        """
+        Handles the key up event of pyxhook
+        :param event: object for representing key pressed event
+                      (see pyxhook.pyxhookkeyevent)
+        """
+        key = event.Key
+        if key in self.keydict:
+            del self.keydict[key]
+
+
     def listener(self):
+        """Listens to keystrokes the user presses and runs the matching hotkey"""
+        self.hook.start()
         while self.listening:
-            # do key handling
-            pass
+            for hotkey in self.hotkeys:
+                if hotkey.has_keys(self.keydict):
+                    hotkey.do_callback()
+        self.hook.cancel()
+            
 
     def listen(self):
         """
@@ -215,20 +254,19 @@ class WindowsHook(UniversalHook):
             self.listen_thread.join()
             self.listen_thread = None
 
+Pyreel = None
 
-class PyReel(object):
-    """
-    Provides the interface for 
-    """
-    def __init__(self):
-        self.hook = self._determine_hook()
+if platform.system() == "Windows":
+    from pyreel import pyhooked
+    Pyreel = WindowsHook
+
+elif platform.system() == "Linux":
+    from pyreel.pyxhook import pyxhook
+    Pyreel = LinuxHook
+
+else:
+    raise Exception("OS {0} is not supported".format(platform.system()))
 
 
-    def _determine_hook(self):
-        """
-        Determines the hook to use for PyReel based on the user's OS
 
-        :return: The appropriate UniversalHook object
-        """
-        return WindowsHook()
 
