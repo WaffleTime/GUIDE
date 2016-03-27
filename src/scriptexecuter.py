@@ -24,10 +24,6 @@ class ExternalTool:
         :param env_variables: enviornment variables being past to the shell
         :return: returns nothing
         """
-        print("command:", command)
-        print("working_dir:", working_dir)
-        print("env_variables:", env_variables)
-
         self.command = command
         self.working_dir = working_dir
         self.env_variables = env_variables
@@ -37,19 +33,15 @@ class ExternalTool:
         Method trys to run command. If the command is invalid throw and error. If the command is valid but fails print error to log
 
         """
-        import pdb
-        pdb.set_trace()
-
         try:
             runner = Popen(args=self.command, stdout=PIPE, stderr=PIPE, env=self.env_variables, cwd=self.working_dir)
             data, err = runner.communicate()
             if data:
                 logging.info(" "+self.command+" executed successfully!")
-                runner.close()
             if err:
                 logging.error(" "+err.decode("UTF-8"))
         except:
-            logging.error(" Uhgg! this isn't working!... but '"+self.command+" is not a valid command so thats probably why!")
+                logging.error(" Uhgg! this isn't working!... but '"+self.command+" is not a valid command so thats probably why!")
 
 
 class InternalTool:
@@ -122,3 +114,6 @@ class Executer:
         self.internal_tools.append(tool)
         logging.info("Internal Tool stored")
         return tool.run
+test = Executer()
+tester = test.create_external_tool("ls")
+tester()
