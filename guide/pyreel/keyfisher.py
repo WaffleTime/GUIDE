@@ -4,14 +4,9 @@ import platform
 import sys
 if __name__ == "__main__":
     sys.path.append("../")
+from pyreel.keyconverters import WindowsKeyConverter
 
 
-class KeyHandler(object):
-    """
-    
-    """
-    def __init__(self):
-        pass
 
 
 class UniversalHook(object):
@@ -70,7 +65,6 @@ class OSXHook(UniversalHook):
     """
     Interface for collecting keystrokes on OSX
     """
-    
 
 
 class LinuxHook(UniversalHook):
@@ -205,6 +199,7 @@ class WindowsHook(UniversalHook):
         Initializes a WindowsHook object
         """
         self.hook = pyhooked.hook()
+        self.key_conv = WindowsKeyConverter()
         self.listen_thread = None
 
 
@@ -225,6 +220,8 @@ class WindowsHook(UniversalHook):
         :param args: the args to send to the callback function
         :returns: the hotkey id used for identifying the hotkey added
         """
+        key_list = self.key_conv.convert_keys(key_list)
+        print("Converted keys: {0}".format(key_list))
         return self.hook.Hotkey(key_list, callb, args)
 
 
@@ -241,8 +238,9 @@ class WindowsHook(UniversalHook):
         """
         Listen to keystrokes and run the provided callback
         """
-        self.listen_thread = threading.Thread(target=self.hook.listen)
-        self.listen_thread.start()
+        if self.listen_thread is None:
+            self.listen_thread = threading.Thread(target=self.hook.listen)
+            self.listen_thread.start()
 
 
     def unhook(self):
