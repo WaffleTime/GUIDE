@@ -6,41 +6,39 @@ from HotkeyLexer import HotkeyLexer
 from HotkeyParser import HotkeyParser
 from HotkeyListener import HotkeyListener
 
+#The data classes that the parser is populating!
+import data.configuration
+import data.projectinfo
+import data.osconfig
+
 
 class HotkeyEmitter(HotkeyListener):
     def __init__(self):
-        pass
+        self.configuration = configuration.Configuration()
         
-    def exitProject(self):
-        print("exit project")
-    
-    def exitProject_Info(self):
-        print("exit project_info")
+    def exitProject(self, ctx : HotkeyParser.ProjectContext):
+        #Hotkey.g4 forces exactly 1 project_info for each config file!
+        ctx.project_info()[0]:
         
-    def exitMap(self):
-        print("map")
+        for os_config in ctx.os_config():
+            
         
-    def exitPair(self):
-        print("pair")
         
-    def exitNamespace(self):
-        print("namespace")
-        
-    def exitValue(self):
-        print("value")
-        
-    def exitOs_Config(self):
+    def exitOs_config(self, ctx : HotkeyParser.Os_configContext):
         print("os_config")
         
-    def exitHotkey(self):
+    def exitNamespace(self, ctx : HotkeyParser.NamespaceContext):
+        print("namespace")
+        
+    def exitHotkey(self, ctx : HotkeyParser.HotkeyContext):
         print("hotkey")
 
 def parse(file_path):
-    input   = FileStream(argv[1])
+    input   = FileStream(file_path)
     lexer   = HotkeyLexer(input)
     stream  = CommonTokenStream(lexer)
     parser  = HotkeyParser(stream)
-    tree    = parser.StartRule()
+    tree    = parser.project()
     
     
     listener = HotkeyEmitter()

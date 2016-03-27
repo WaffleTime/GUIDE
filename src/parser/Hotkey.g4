@@ -5,12 +5,11 @@ project
     : project_info (os_config)*
     ;
 
-
 project_info
-    :   'project' STRING map
+    :   'project' NAME dictionary
     ;
 
-map
+dictionary
     :   pair (',' pair)* ';'        # AnObject
     |   ';'                         # EmptyObject
     ;   
@@ -30,30 +29,29 @@ os_config
     ;
     
 namespace
-    :   'namespace' STRING map
+    :   'namespace' NAME dictionary
     ;
     
 hotkey
-    : 'hotkey' STRING (sequence_condition | simultaneous_condition)
+    : 'hotkey' NAME (sequence_condition | simultaneous_condition) ';'
     ;
     
 sequence_condition
-    : 'condition' 'is' STRING '->' STRING
+    : 'condition' 'is' NAME '->' NAME
     ;
     
 simultaneous_condition
-    : 'condition' 'is' STRING '&' STRING
+    : 'condition' 'is' NAME '&' NAME
     ;
 
 
 EQUAL : ('is' | '=');
     
-OPERATING_SYSTEM : ('windows:' | 'linux:' | 'osx');
+OPERATING_SYSTEM : ('global' | 'windows:' | 'linux:' | 'osx');
 
-STRING :  '"' (ESC | ~["\\])* '"' ;
-fragment ESC :   '\\' (["\\/bfnrt] | UNICODE) ;
-fragment UNICODE : 'u' HEX HEX HEX HEX ;
-fragment HEX : [0-9a-fA-F] ;
+NAME : ~('\r' | '\n' | '"' | ' ')+ ;
+
+STRING :  '"' ~('\r' | '\n' | '"')* '"' ;
 
 NUMBER
     :   '-'? INT '.' INT EXP?   // 1.35, 1.35E-9, 0.3, -4.5
@@ -63,4 +61,6 @@ NUMBER
 fragment INT :   '0' | '1'..'9' '0'..'9'* ; // no leading zeros
 fragment EXP :   [Ee] [+\-]? INT ; // \- since - means "range" inside [...]
 
-WS  :   [ \t\n\r]+ -> skip ;
+WS : SPACE+ -> skip;
+
+fragment SPACE : '\t' | ' ' | '\r' | '\n'| '\u000C';
