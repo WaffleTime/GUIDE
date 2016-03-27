@@ -1,5 +1,7 @@
 import sys
 
+from antlr4 import *
+
 from HotkeyLexer import HotkeyLexer
 from HotkeyParser import HotkeyParser
 from HotkeyListener import HotkeyListener
@@ -43,11 +45,7 @@ class HotkeyEmitter(HotkeyListener):
         self.dictionaries[ctx] = dict
         
     def enterConfig(self, ctx:HotkeyParser.ConfigContext):
-<<<<<<< HEAD:src/parser/configparser.py
-        self.current_os = ctx.OPERATING_SYSTEM().strip(":")
-=======
         self.current_os = ctx.OPERATING_SYSTEM().getText().strip(":")
->>>>>>> 24b96984973b1f7c15aa3376c5065fa34584a8ad:src/configparser.py
     
     def enterEmptyObject(self, ctx:HotkeyParser.EmptyObjectContext):
         """
@@ -132,10 +130,7 @@ def parse(file_path):
     walker = ParseTreeWalker()
     walker.walk(listener, tree)
 
-
-
     return listener.configuration
-<<<<<<< HEAD:src/parser/configparser.py
         
         
 if __name__ == '__main__':
@@ -143,5 +138,3 @@ if __name__ == '__main__':
         configuration = parse(sys.argv[1])
     else:
         print("Usage:\npython configparser.py <onfig_path>")
-=======
->>>>>>> 24b96984973b1f7c15aa3376c5065fa34584a8ad:src/configparser.py

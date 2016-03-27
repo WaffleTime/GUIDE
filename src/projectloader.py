@@ -1,10 +1,8 @@
 from sys import platform as _platform
 import sys
-from parser.configparser  import *
+import configparser
 from scriptexecuter import *
 from pyreel.keyfisher import *
-
-#parser(parser/test_config.text)
 
 class Loader:
     def __init__(self, global_config, proj_config, executer, pyreel):
@@ -17,11 +15,12 @@ class Loader:
         self.executer = executer
         self.pyreel = pyreel
 
-    def combine(self, config):
-        osconfig = config.osconfigs
+    def combine(self, config_path):
+        config      = configparser.parse(config_path)
+        osconfigs   = config.os_configs
 
-	system_config = osconfigs.get(self.system_type, None)
-        global_config = osconfig.get("global",None)
+        system_config = osconfigs.get(self.set_system(), None)
+        global_config = osconfigs.get("global",None)
 
         extern_hkeys = []
         intern_hkeys = []
@@ -60,14 +59,20 @@ class Loader:
             pointer=self.executer.create_internal_tool(self.proj_config, self.global_config, key.executable)
 
 if __name__ == "__main__":
-    pyreel = Pyreel()
-
     projconfig  = ""
     globalconfig = ""
 
     if (len(sys.argv) >= 3):
         globalconfig = sys.argv[1]
         projconfig = sys.argv[2]
+        
+        sys.path.append("../antlr4")
+
+    else:
+        print("Usage:\npython projectloader.py <global_config> <project_config>")
+        sys.exit(1)
+
+    pyreel = Pyreel()
 
     executive = Executer()
 

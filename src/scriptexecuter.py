@@ -8,6 +8,7 @@ author Gus Tropea
 import logging
 from subprocess import Popen, PIPE
 import importlib.util
+import guimanager
 
 LOG_FILENAME = 'GUIDE.log'
 
@@ -73,10 +74,10 @@ class InternalTool:
                 if i.endswith(".py"):
                     module_name += i.split(".py")[0]
             try:
-                spec = importlib.util.spec_from_file_location("module.name", self.path)
+                spec = importlib.util.spec_from_file_location(module_name, self.path)
                 self.mod  = importlib.util.module_from_spec(spec)
                 spec.loader.exec_module(self.mod)
-                self.mod.run()
+                self.mod.run(self.global_config, self.project_config, self.gui)
                 logging.info(" "+module_name+" started successfully!")
             except:
                 raise
@@ -90,6 +91,8 @@ class Executer:
         """
         self.external_tools=[]
         self.internal_tools=[]
+        
+        self.gui_manager = guimanager.GUIManager()
     
     def create_external_tool(self, command, working_dir=".", env_variables={}):
         """
@@ -101,12 +104,12 @@ class Executer:
         logging.info("external tool stored")
         return tool.run
 
-    def create_internal_tool(self, project_config, global_config, path, gui):
+    def create_internal_tool(self, project_config, global_config, path):
         """
         Method starts internal tool and stores it.
         :return: returns function pointer to the objects run method.
         """
-        tool = InternalTool(project_config, global_config, path, gui)
+        tool = InternalTool(project_config, global_config, path, self.gui_manager)
         self.internal_tools.append(tool)
         logging.info("Internal Tool stored")
         return tool.run

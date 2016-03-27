@@ -1,0 +1,1 @@
+call python src/projectloader.py config_files/global.gconf config_files/proj.gconf
