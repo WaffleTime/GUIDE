@@ -1,1 +1,3 @@
-__author__ = 'ericvergnaud'
+import sys
+
+sys.path.append(".")
