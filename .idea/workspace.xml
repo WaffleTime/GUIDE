@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a42578f4-cf47-4b91-ab97-cb5aba0b29f0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/user_scripts/display_configurations.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GUIDE.log" afterPath="$PROJECT_DIR$/GUIDE.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config_files/global.gconf" afterPath="$PROJECT_DIR$/config_files/global.gconf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config_files/proj.gconf" afterPath="$PROJECT_DIR$/config_files/proj.gconf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/__init__.py" afterPath="$PROJECT_DIR$/src/__init__.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/configparser.py" afterPath="$PROJECT_DIR$/src/configparser.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/guimanager.py" afterPath="$PROJECT_DIR$/src/guimanager.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/projectloader.py" afterPath="$PROJECT_DIR$/src/projectloader.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pyreel/keyfisher.py" afterPath="$PROJECT_DIR$/src/pyreel/keyfisher.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scriptexecuter.py" afterPath="$PROJECT_DIR$/src/scriptexecuter.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/parser/antlr4.bat" afterPath="$PROJECT_DIR$/tools/parser/antlr4.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/parser/build_grammar.bat" afterPath="$PROJECT_DIR$/tools/parser/build_grammar.bat" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/user_scripts/tkinter_example.py" afterPath="$PROJECT_DIR$/user_scripts/tkinter_example.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test.bat" afterPath="" />
     </list>
     <ignored path="GUIDE.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,7 +47,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="guimanager.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="guimanager.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/guimanager.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
@@ -76,19 +63,19 @@
         <entry file="file://$PROJECT_DIR$/src/projectloader.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="590">
-              <caret line="109" column="31" selection-start-line="109" selection-start-column="31" selection-end-line="109" selection-end-column="31" />
+              <caret line="114" column="31" selection-start-line="114" selection-start-column="31" selection-end-line="114" selection-end-column="31" />
               <folding>
-                <element signature="e#0#37#0" expanded="true" />
+                <element signature="e#63#100#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scriptexecuter.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="scriptexecuter.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scriptexecuter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1406">
-              <caret line="98" column="23" selection-start-line="98" selection-start-column="23" selection-end-line="98" selection-end-column="23" />
+            <state relative-caret-position="641">
+              <caret line="53" column="19" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
               <folding>
                 <element signature="e#71#85#0" expanded="true" />
               </folding>
@@ -100,8 +87,10 @@
         <entry file="file://$PROJECT_DIR$/src/pyreel/keyconverters.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="522">
-              <caret line="83" column="53" selection-start-line="83" selection-start-column="53" selection-end-line="83" selection-end-column="53" />
-              <folding />
+              <caret line="86" column="29" selection-start-line="86" selection-start-column="29" selection-end-line="86" selection-end-column="29" />
+              <folding>
+                <marker date="1459092948543" expanded="true" signature="600:1349" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -644,9 +633,9 @@
     <entry file="file://$PROJECT_DIR$/src/projectloader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="590">
-          <caret line="109" column="31" selection-start-line="109" selection-start-column="31" selection-end-line="109" selection-end-column="31" />
+          <caret line="114" column="31" selection-start-line="114" selection-start-column="31" selection-end-line="114" selection-end-column="31" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#63#100#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -654,17 +643,9 @@
     <entry file="file://$PROJECT_DIR$/src/pyreel/keyconverters.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
-          <caret line="83" column="53" selection-start-line="83" selection-start-column="53" selection-end-line="83" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scriptexecuter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1406">
-          <caret line="98" column="23" selection-start-line="98" selection-start-column="23" selection-end-line="98" selection-end-column="23" />
+          <caret line="86" column="29" selection-start-line="86" selection-start-column="29" selection-end-line="86" selection-end-column="29" />
           <folding>
-            <element signature="e#71#85#0" expanded="true" />
+            <marker date="1459092948543" expanded="true" signature="600:1349" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -709,6 +690,16 @@
           <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scriptexecuter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="641">
+          <caret line="53" column="19" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
+          <folding>
+            <element signature="e#71#85#0" expanded="true" />
           </folding>
         </state>
       </provider>

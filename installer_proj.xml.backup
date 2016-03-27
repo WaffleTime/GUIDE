@@ -57,9 +57,6 @@
                         <distributionDirectory>
                             <origin>F:/Projects/GUIDE/config_files</origin>
                         </distributionDirectory>
-                        <distributionFile>
-                            <origin>F:/Projects/GUIDE/run.bat</origin>
-                        </distributionFile>
                     </distributionFileList>
                 </folder>
                 <folder>
@@ -85,12 +82,9 @@
     </componentList>
     <postInstallationActionList>
         <runProgram>
-            <program>${installdir}/dependencies/python-3.5.1.exe</program>
+            <program>${install_dir}/dependencies/python-3.5.1.exe</program>
             <programArguments></programArguments>
         </runProgram>
-        <deleteFile>
-            <path>${installdir}/dependencies</path>
-        </deleteFile>
     </postInstallationActionList>
     <enableRollback>1</enableRollback>
     <enableTimestamp>1</enableTimestamp>
@@ -103,8 +97,9 @@
             <value></value>
             <default>${platform_install_prefix}/${product_shortname}-${product_version}</default>
             <allowEmptyValue>0</allowEmptyValue>
+            <ask>yes</ask>
             <cliOptionName>prefix</cliOptionName>
-            <mustBeWritable>1</mustBeWritable>
+            <mustBeWritable>yes</mustBeWritable>
             <mustExist>0</mustExist>
             <width>40</width>
         </directoryParameter>
