@@ -28,11 +28,15 @@ supported_keys = [
  '?', '@', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e', 'f', 'g',
  'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
  'w', 'x', 'y', 'z', '{', '|', '}', '~', 'LCtrl', 'RCtrl', 'LShift', 'RShift',
- 'LAlt', 'RAlt', 'Tab', 'Return', 'Cap', 'Up', 'Down', 'Left', 'Right', "Esc",
+ 'LAlt', 'RAlt', 'Tab', 'Return', 'Up', 'Down', 'Left', 'Right', "Esc",
  'Space', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11',
- 'F12', 'PgUp', 'PgDn', 'PrtSc', 'Pause', 'Insert', 'Home', 'Delete', 'End',
- 'NumLock'
- ]
+ 'F12', 'PrtSc']
+
+# These keys should be supported in the future but are not currently since we
+# don't know their codes
+to_support = [
+    'Cap', 'PgUp', 'PgDn', 'Pause', 'Delete', 'Ins', 'Home', 'End', 'NumLock'
+]
 
 
 shift_table = {
