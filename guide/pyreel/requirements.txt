@@ -12,4 +12,4 @@ pyobjc-framework-Quartz==3.0.4
 
 # pyxhook
 # sudo apt-get install python-xlib
-python-xlib==0.12
+python-xlib>=1.4
