@@ -40,7 +40,7 @@ external_tool_hotkey
           simultaneous_condition
           (environment_vars)?
           (working_dir)?
-          'execute' '$' COMMAND
+          'execute' COMMAND
           ';'
     ;
 
@@ -68,7 +68,7 @@ EQUAL : ('is' | '=');
 
 OPERATING_SYSTEM : ('global:' | 'windows:' | 'linux:' | 'osx:');
 
-COMMAND : ~('\r' | '\n')+ ;
+COMMAND : '$' ~('\r' | '\n')+ ;
 
 NAME : ~('\r' | '\n' | '"' | ' ')+ ;
 

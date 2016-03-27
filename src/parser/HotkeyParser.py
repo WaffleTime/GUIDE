@@ -5,42 +5,42 @@ from io import StringIO
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\27")
-        buf.write("v\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b")
+        buf.write("\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\26")
+        buf.write("u\4\2\t\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b")
         buf.write("\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4\f\t\f\4\r\t\r\3\2\3\2")
         buf.write("\7\2\35\n\2\f\2\16\2 \13\2\3\3\3\3\3\3\3\3\3\4\3\4\3\4")
         buf.write("\7\4)\n\4\f\4\16\4,\13\4\3\4\3\4\3\4\5\4\61\n\4\3\5\3")
         buf.write("\5\3\5\3\5\3\6\3\6\3\6\3\6\3\6\5\6<\n\6\3\7\3\7\3\7\3")
         buf.write("\7\5\7B\n\7\7\7D\n\7\f\7\16\7G\13\7\3\7\3\7\3\b\3\b\3")
         buf.write("\b\3\b\3\t\3\t\3\t\3\t\5\tS\n\t\3\t\5\tV\n\t\3\t\3\t\3")
-        buf.write("\t\3\t\3\t\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3\f\3\f\3\f")
-        buf.write("\3\f\3\f\3\f\3\f\3\f\3\r\3\r\3\r\3\r\3\r\7\rq\n\r\f\r")
-        buf.write("\16\rt\13\r\3\r\2\2\16\2\4\6\b\n\f\16\20\22\24\26\30\2")
-        buf.write("\2v\2\32\3\2\2\2\4!\3\2\2\2\6\60\3\2\2\2\b\62\3\2\2\2")
-        buf.write("\n;\3\2\2\2\f=\3\2\2\2\16J\3\2\2\2\20N\3\2\2\2\22\\\3")
-        buf.write("\2\2\2\24_\3\2\2\2\26c\3\2\2\2\30k\3\2\2\2\32\36\5\4\3")
-        buf.write("\2\33\35\5\f\7\2\34\33\3\2\2\2\35 \3\2\2\2\36\34\3\2\2")
-        buf.write("\2\36\37\3\2\2\2\37\3\3\2\2\2 \36\3\2\2\2!\"\7\3\2\2\"")
-        buf.write("#\7\24\2\2#$\5\6\4\2$\5\3\2\2\2%*\5\b\5\2&\'\7\4\2\2\'")
-        buf.write(")\5\b\5\2(&\3\2\2\2),\3\2\2\2*(\3\2\2\2*+\3\2\2\2+-\3")
-        buf.write("\2\2\2,*\3\2\2\2-.\7\5\2\2.\61\3\2\2\2/\61\7\5\2\2\60")
-        buf.write("%\3\2\2\2\60/\3\2\2\2\61\7\3\2\2\2\62\63\7\25\2\2\63\64")
-        buf.write("\7\21\2\2\64\65\5\n\6\2\65\t\3\2\2\2\66<\7\25\2\2\67<")
-        buf.write("\7\26\2\28<\7\6\2\29<\7\7\2\2:<\7\b\2\2;\66\3\2\2\2;\67")
-        buf.write("\3\2\2\2;8\3\2\2\2;9\3\2\2\2;:\3\2\2\2<\13\3\2\2\2=E\7")
-        buf.write("\22\2\2>B\5\16\b\2?B\5\20\t\2@B\5\26\f\2A>\3\2\2\2A?\3")
-        buf.write("\2\2\2A@\3\2\2\2BD\3\2\2\2CA\3\2\2\2DG\3\2\2\2EC\3\2\2")
-        buf.write("\2EF\3\2\2\2FH\3\2\2\2GE\3\2\2\2HI\7\5\2\2I\r\3\2\2\2")
-        buf.write("JK\7\t\2\2KL\7\24\2\2LM\5\6\4\2M\17\3\2\2\2NO\7\n\2\2")
-        buf.write("OP\7\24\2\2PR\5\30\r\2QS\5\22\n\2RQ\3\2\2\2RS\3\2\2\2")
-        buf.write("SU\3\2\2\2TV\5\24\13\2UT\3\2\2\2UV\3\2\2\2VW\3\2\2\2W")
-        buf.write("X\7\13\2\2XY\7\f\2\2YZ\7\23\2\2Z[\7\5\2\2[\21\3\2\2\2")
-        buf.write("\\]\7\r\2\2]^\5\6\4\2^\23\3\2\2\2_`\7\16\2\2`a\7\21\2")
-        buf.write("\2ab\7\25\2\2b\25\3\2\2\2cd\7\n\2\2de\7\24\2\2ef\5\30")
-        buf.write("\r\2fg\7\13\2\2gh\7\17\2\2hi\7\23\2\2ij\7\5\2\2j\27\3")
-        buf.write("\2\2\2kl\7\20\2\2lm\7\21\2\2mr\7\24\2\2no\7\4\2\2oq\7")
-        buf.write("\24\2\2pn\3\2\2\2qt\3\2\2\2rp\3\2\2\2rs\3\2\2\2s\31\3")
-        buf.write("\2\2\2tr\3\2\2\2\13\36*\60;AERUr")
+        buf.write("\t\3\t\3\n\3\n\3\n\3\13\3\13\3\13\3\13\3\f\3\f\3\f\3\f")
+        buf.write("\3\f\3\f\3\f\3\f\3\r\3\r\3\r\3\r\3\r\7\rp\n\r\f\r\16\r")
+        buf.write("s\13\r\3\r\2\2\16\2\4\6\b\n\f\16\20\22\24\26\30\2\2u\2")
+        buf.write("\32\3\2\2\2\4!\3\2\2\2\6\60\3\2\2\2\b\62\3\2\2\2\n;\3")
+        buf.write("\2\2\2\f=\3\2\2\2\16J\3\2\2\2\20N\3\2\2\2\22[\3\2\2\2")
+        buf.write("\24^\3\2\2\2\26b\3\2\2\2\30j\3\2\2\2\32\36\5\4\3\2\33")
+        buf.write("\35\5\f\7\2\34\33\3\2\2\2\35 \3\2\2\2\36\34\3\2\2\2\36")
+        buf.write("\37\3\2\2\2\37\3\3\2\2\2 \36\3\2\2\2!\"\7\3\2\2\"#\7\23")
+        buf.write("\2\2#$\5\6\4\2$\5\3\2\2\2%*\5\b\5\2&\'\7\4\2\2\')\5\b")
+        buf.write("\5\2(&\3\2\2\2),\3\2\2\2*(\3\2\2\2*+\3\2\2\2+-\3\2\2\2")
+        buf.write(",*\3\2\2\2-.\7\5\2\2.\61\3\2\2\2/\61\7\5\2\2\60%\3\2\2")
+        buf.write("\2\60/\3\2\2\2\61\7\3\2\2\2\62\63\7\24\2\2\63\64\7\20")
+        buf.write("\2\2\64\65\5\n\6\2\65\t\3\2\2\2\66<\7\24\2\2\67<\7\25")
+        buf.write("\2\28<\7\6\2\29<\7\7\2\2:<\7\b\2\2;\66\3\2\2\2;\67\3\2")
+        buf.write("\2\2;8\3\2\2\2;9\3\2\2\2;:\3\2\2\2<\13\3\2\2\2=E\7\21")
+        buf.write("\2\2>B\5\16\b\2?B\5\20\t\2@B\5\26\f\2A>\3\2\2\2A?\3\2")
+        buf.write("\2\2A@\3\2\2\2BD\3\2\2\2CA\3\2\2\2DG\3\2\2\2EC\3\2\2\2")
+        buf.write("EF\3\2\2\2FH\3\2\2\2GE\3\2\2\2HI\7\5\2\2I\r\3\2\2\2JK")
+        buf.write("\7\t\2\2KL\7\23\2\2LM\5\6\4\2M\17\3\2\2\2NO\7\n\2\2OP")
+        buf.write("\7\23\2\2PR\5\30\r\2QS\5\22\n\2RQ\3\2\2\2RS\3\2\2\2SU")
+        buf.write("\3\2\2\2TV\5\24\13\2UT\3\2\2\2UV\3\2\2\2VW\3\2\2\2WX\7")
+        buf.write("\13\2\2XY\7\22\2\2YZ\7\5\2\2Z\21\3\2\2\2[\\\7\f\2\2\\")
+        buf.write("]\5\6\4\2]\23\3\2\2\2^_\7\r\2\2_`\7\20\2\2`a\7\24\2\2")
+        buf.write("a\25\3\2\2\2bc\7\n\2\2cd\7\23\2\2de\5\30\r\2ef\7\13\2")
+        buf.write("\2fg\7\16\2\2gh\7\23\2\2hi\7\5\2\2i\27\3\2\2\2jk\7\17")
+        buf.write("\2\2kl\7\20\2\2lq\7\23\2\2mn\7\4\2\2np\7\23\2\2om\3\2")
+        buf.write("\2\2ps\3\2\2\2qo\3\2\2\2qr\3\2\2\2r\31\3\2\2\2sq\3\2\2")
+        buf.write("\2\13\36*\60;AERUq")
         return buf.getvalue()
 
 
@@ -55,14 +55,13 @@ class HotkeyParser ( Parser ):
     sharedContextCache = PredictionContextCache()
 
     literalNames = [ "<INVALID>", "'project'", "','", "';'", "'true'", "'false'", 
-                     "'null'", "'namespace'", "'hotkey'", "'execute'", "'$'", 
-                     "'environment_variables'", "'working_directory'", "'>'", 
-                     "'condition'" ]
+                     "'null'", "'namespace'", "'hotkey'", "'execute'", "'environment_variables'", 
+                     "'working_directory'", "'>'", "'condition'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "<INVALID>", "<INVALID>", "EQUAL", "OPERATING_SYSTEM", 
+                      "<INVALID>", "<INVALID>", "EQUAL", "OPERATING_SYSTEM", 
                       "COMMAND", "NAME", "STRING", "NUMBER", "WS" ]
 
     RULE_project = 0
@@ -96,14 +95,13 @@ class HotkeyParser ( Parser ):
     T__10=11
     T__11=12
     T__12=13
-    T__13=14
-    EQUAL=15
-    OPERATING_SYSTEM=16
-    COMMAND=17
-    NAME=18
-    STRING=19
-    NUMBER=20
-    WS=21
+    EQUAL=14
+    OPERATING_SYSTEM=15
+    COMMAND=16
+    NAME=17
+    STRING=18
+    NUMBER=19
+    WS=20
 
     def __init__(self, input:TokenStream):
         super().__init__(input)
@@ -659,14 +657,14 @@ class HotkeyParser ( Parser ):
             self.simultaneous_condition()
             self.state = 80
             _la = self._input.LA(1)
-            if _la==HotkeyParser.T__10:
+            if _la==HotkeyParser.T__9:
                 self.state = 79
                 self.environment_vars()
 
 
             self.state = 83
             _la = self._input.LA(1)
-            if _la==HotkeyParser.T__11:
+            if _la==HotkeyParser.T__10:
                 self.state = 82
                 self.working_dir()
 
@@ -674,10 +672,8 @@ class HotkeyParser ( Parser ):
             self.state = 85
             self.match(HotkeyParser.T__8)
             self.state = 86
-            self.match(HotkeyParser.T__9)
-            self.state = 87
             self.match(HotkeyParser.COMMAND)
-            self.state = 88
+            self.state = 87
             self.match(HotkeyParser.T__2)
         except RecognitionException as re:
             localctx.exception = re
@@ -717,9 +713,9 @@ class HotkeyParser ( Parser ):
         self.enterRule(localctx, 16, self.RULE_environment_vars)
         try:
             self.enterOuterAlt(localctx, 1)
+            self.state = 89
+            self.match(HotkeyParser.T__9)
             self.state = 90
-            self.match(HotkeyParser.T__10)
-            self.state = 91
             self.dictionary()
         except RecognitionException as re:
             localctx.exception = re
@@ -761,11 +757,11 @@ class HotkeyParser ( Parser ):
         self.enterRule(localctx, 18, self.RULE_working_dir)
         try:
             self.enterOuterAlt(localctx, 1)
+            self.state = 92
+            self.match(HotkeyParser.T__10)
             self.state = 93
-            self.match(HotkeyParser.T__11)
-            self.state = 94
             self.match(HotkeyParser.EQUAL)
-            self.state = 95
+            self.state = 94
             self.match(HotkeyParser.STRING)
         except RecognitionException as re:
             localctx.exception = re
@@ -781,15 +777,15 @@ class HotkeyParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def NAME(self):
-            return self.getToken(HotkeyParser.NAME, 0)
+        def NAME(self, i:int=None):
+            if i is None:
+                return self.getTokens(HotkeyParser.NAME)
+            else:
+                return self.getToken(HotkeyParser.NAME, i)
 
         def simultaneous_condition(self):
             return self.getTypedRuleContext(HotkeyParser.Simultaneous_conditionContext,0)
 
-
-        def COMMAND(self):
-            return self.getToken(HotkeyParser.COMMAND, 0)
 
         def getRuleIndex(self):
             return HotkeyParser.RULE_custom_script_hotkey
@@ -811,19 +807,19 @@ class HotkeyParser ( Parser ):
         self.enterRule(localctx, 20, self.RULE_custom_script_hotkey)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 97
+            self.state = 96
             self.match(HotkeyParser.T__7)
-            self.state = 98
+            self.state = 97
             self.match(HotkeyParser.NAME)
-            self.state = 99
+            self.state = 98
             self.simultaneous_condition()
-            self.state = 100
+            self.state = 99
             self.match(HotkeyParser.T__8)
+            self.state = 100
+            self.match(HotkeyParser.T__11)
             self.state = 101
-            self.match(HotkeyParser.T__12)
+            self.match(HotkeyParser.NAME)
             self.state = 102
-            self.match(HotkeyParser.COMMAND)
-            self.state = 103
             self.match(HotkeyParser.T__2)
         except RecognitionException as re:
             localctx.exception = re
@@ -869,21 +865,21 @@ class HotkeyParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
+            self.state = 104
+            self.match(HotkeyParser.T__12)
             self.state = 105
-            self.match(HotkeyParser.T__13)
-            self.state = 106
             self.match(HotkeyParser.EQUAL)
-            self.state = 107
+            self.state = 106
             self.match(HotkeyParser.NAME)
-            self.state = 112
+            self.state = 111
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while _la==HotkeyParser.T__1:
-                self.state = 108
+                self.state = 107
                 self.match(HotkeyParser.T__1)
-                self.state = 109
+                self.state = 108
                 self.match(HotkeyParser.NAME)
-                self.state = 114
+                self.state = 113
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
 

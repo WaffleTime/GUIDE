@@ -14,6 +14,8 @@ from data.externaltoolhotkey import ExternalToolHotkey
 from data.customscripthotkey import CustomScriptHotkey
 
 
+import pdb
+
 class HotkeyEmitter(HotkeyListener):
     def __init__(self):
         self.configuration  = Configuration()
@@ -25,16 +27,13 @@ class HotkeyEmitter(HotkeyListener):
         """
         Denotes the entry of a value context of type string.
         """
-        self.values[ctx] = ctx.getText()
-
-        print("String:", ctx.getText())
+        self.values[ctx] = ctx.getText().strip('"')
 
     def enterAtom(self, ctx:HotkeyParser.AtomContext):
         """
         Denotes the entry of a value context of any type other than the string type.
         """
         self.values[ctx] = ctx.getText().strip('"')
-        print("Atom:", ctx.getText().strip('"'))
 
     def enterAnObject(self, ctx:HotkeyParser.AnObjectContext):
         """
@@ -49,7 +48,7 @@ class HotkeyEmitter(HotkeyListener):
         self.dictionaries[ctx] = dict
         
     def enterConfig(self, ctx:HotkeyParser.ConfigContext):
-        self.current_os = ctx.OPERATING_SYSTEM()
+        self.current_os = ctx.OPERATING_SYSTEM().getText().strip(":")
     
     def enterEmptyObject(self, ctx:HotkeyParser.EmptyObjectContext):
         """
@@ -77,7 +76,7 @@ class HotkeyEmitter(HotkeyListener):
 
             for namespace_ctx in config_ctx.namespace():
                 namespace_name                          = namespace_ctx.NAME().getText()
-                os_config.dictionaries[namespace_name]  = self.dictionaries.get(namespace_ctx, {})
+                os_config.namespaces[namespace_name]    = self.dictionaries.get(namespace_ctx, {})
 
             for hotkey_ctx in config_ctx.external_tool_hotkey():
                 hotkey              = ExternalToolHotkey()
@@ -90,9 +89,8 @@ class HotkeyEmitter(HotkeyListener):
                 conditions_ctx      = hotkey_ctx.simultaneous_condition()
                 conditions          = []
 
-                asdfasdfasdfasdf
                 for condition_ctx in conditions_ctx.NAME():
-                    conditions.append(condition_ctx.NAME().getText())
+                    conditions.append(condition_ctx.getText())
 
                 hotkey.condition    = conditions
 
@@ -116,7 +114,7 @@ class HotkeyEmitter(HotkeyListener):
 
                 hotkey.condition = conditions
 
-                hotkey.executable = hotkey_ctx.COMMAND()
+                hotkey.executable = hotkey_ctx.COMMAND().strip("$")
 
                 os_config.hotkeys[hotkey.name] = hotkey
 
