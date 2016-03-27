@@ -60,7 +60,6 @@ class InternalTool:
             self.global_config = global_config
             self.path = path
             self.gui = gui
-            self.mod = None
         
         
         def run(self):
@@ -74,9 +73,9 @@ class InternalTool:
                     module_name += i.split(".py")[0]
             try:
                 spec = importlib.util.spec_from_file_location(module_name, self.path)
-                self.mod  = importlib.util.module_from_spec(spec)
-                spec.loader.exec_module(self.mod)
-                self.mod.run(self.global_config, self.project_config, self.gui)
+                mod  = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(mod)
+                mod.run(self.global_config, self.project_config, self.gui)
                 logging.info(" "+module_name+" started successfully!")
             except:
                 raise
