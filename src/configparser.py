@@ -44,8 +44,58 @@ class HotkeyEmitter(HotkeyListener):
 
         self.dictionaries[ctx] = dict
         
-    def enterConfig(self, ctx:HotkeyParser.ConfigContext):
-        self.current_os = ctx.OPERATING_SYSTEM().getText().strip(":")
+    def exitConfig(self, ctx:HotkeyParser.ConfigContext):
+        current_os = ctx.OPERATING_SYSTEM().getText().strip(":")
+
+        os_config = OsConfig(current_os)
+
+        for namespace_ctx in ctx.namespace():
+            namespace_name = namespace_ctx.NAME().getText()
+            os_config.namespaces[namespace_name] = self.dictionaries.get(namespace_ctx, {})
+
+        for hotkey_ctx in ctx.external_tool_hotkey():
+            hotkey = ExternalToolHotkey()
+
+            hotkey.name = hotkey_ctx.NAME().getText()
+
+            env_vars_ctx = hotkey_ctx.environment_vars()
+            if (env_vars_ctx != None):
+                hotkey.env_vars = self.dictionaries[env_vars_ctx.dictionary()]
+
+            conditions_ctx = hotkey_ctx.simultaneous_condition()
+            conditions = []
+
+            for condition_ctx in conditions_ctx.NAME():
+                conditions.append(condition_ctx.getText())
+
+            hotkey.condition = conditions
+
+            working_dir_ctx = hotkey_ctx.working_dir()
+            if (working_dir_ctx != None):
+                hotkey.working_dir = working_dir_ctx.STRING().getText().strip("\"")
+
+            hotkey.executable = hotkey_ctx.STRING().getText().strip("\"")
+
+            os_config.external_tool_hotkeys[hotkey.name] = hotkey
+
+        for hotkey_ctx in ctx.custom_script_hotkey():
+            hotkey = CustomScriptHotkey()
+
+            hotkey.name = hotkey_ctx.NAME().getText()
+
+            conditions_ctx = hotkey_ctx.simultaneous_condition()
+            conditions = []
+
+            for condition_ctx in conditions_ctx.NAME():
+                conditions.append(condition_ctx.getText())
+
+            hotkey.condition = conditions
+
+            hotkey.executable = hotkey_ctx.STRING().getText().strip("\"")
+
+            os_config.custom_script_hotkeys[hotkey.name] = hotkey
+
+        self.configuration.os_configs[current_os] = os_config
     
     def enterEmptyObject(self, ctx:HotkeyParser.EmptyObjectContext):
         """
@@ -66,58 +116,6 @@ class HotkeyEmitter(HotkeyListener):
         project_info.info   = self.dictionaries[info_ctx]
         
         self.configuration.project_info = project_info
-
-        # Then we need to loop through all of the os_config contexts and create all of those objects.
-        for config_ctx in ctx.config():
-            os_config = OsConfig(self.current_os)
-
-            for namespace_ctx in config_ctx.namespace():
-                namespace_name                          = namespace_ctx.NAME().getText()
-                os_config.namespaces[namespace_name]    = self.dictionaries.get(namespace_ctx, {})
-
-            for hotkey_ctx in config_ctx.external_tool_hotkey():
-                hotkey              = ExternalToolHotkey()
-
-                hotkey.name         = hotkey_ctx.NAME().getText()
-
-                env_vars_ctx        = hotkey_ctx.environment_vars()
-                if (env_vars_ctx != None):
-                    hotkey.env_vars     = self.dictionaries[env_vars_ctx.dictionary()]
-
-                conditions_ctx      = hotkey_ctx.simultaneous_condition()
-                conditions          = []
-
-                for condition_ctx in conditions_ctx.NAME():
-                    conditions.append(condition_ctx.getText())
-
-                hotkey.condition    = conditions
-
-                working_dir_ctx     = hotkey_ctx.working_dir()
-                if (working_dir_ctx != None):
-                    hotkey.working_dir  = working_dir_ctx.STRING().getText().strip("\"")
-
-                hotkey.executable = hotkey_ctx.STRING().getText().strip("\"")
-
-                os_config.external_tool_hotkeys[hotkey.name] = hotkey
-
-            for hotkey_ctx in config_ctx.custom_script_hotkey():
-                hotkey              = CustomScriptHotkey()
-
-                hotkey.name = hotkey_ctx.NAME().getText()
-
-                conditions_ctx = hotkey_ctx.simultaneous_condition()
-                conditions = []
-
-                for condition_ctx in conditions_ctx.NAME():
-                    conditions.append(condition_ctx.getText())
-
-                hotkey.condition = conditions
-
-                hotkey.executable = hotkey_ctx.STRING().getText().strip("\"")
-
-                os_config.custom_script_hotkeys[hotkey.name] = hotkey
-
-            self.configuration.os_configs[self.current_os] = os_config
 
 
 def parse(file_path):

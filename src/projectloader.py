@@ -1,5 +1,7 @@
 from sys import platform as _platform
 import sys
+sys.path.append("../antlr4")
+
 import time
 import configparser
 from scriptexecuter import *
@@ -46,7 +48,7 @@ class Loader:
             extern_hkeys += system_config.external_tool_hotkeys.values()
             intern_hkeys += system_config.custom_script_hotkeys.values()
 
-        elif (global_config != None):
+        if (global_config != None):
             extern_hkeys += global_config.external_tool_hotkeys.values()
             intern_hkeys += global_config.custom_script_hotkeys.values()
 
@@ -63,13 +65,10 @@ class Loader:
         Method figures out the operating system the user is on.
         """
         if _platform == "linux" or _platform == "linux2":
-            logging.info("you are running linux")
             return "linux"
         elif _platform == "darwin":
-            logging.info("you are running osx")
             return "osx"
         elif _platform == "win32":
-            logging.info("you are running windows ... I'm sorry :(")
             return "windows"
         
 
@@ -77,7 +76,6 @@ class Loader:
         """
         Method creates the external tool hotkeys.
         """
-        logging.info("making external hotkeys")
         for key in self.extern_hkeys.values():
             pointer=self.executer.create_external_tool(key.executable, key.working_dir, key.env_vars)
             self.pyreel.add_hotkey(key.condition, pointer)
@@ -86,39 +84,32 @@ class Loader:
         """
         Method creates the internal srcipt hotkeys.
         """
-        logging.info("making internal hotkeys")
         for key in self.intern_hkeys.values():
             pointer=self.executer.create_internal_tool(self.proj_config, self.global_config, key.executable)
             self.pyreel.add_hotkey(key.condition, pointer)
 
 if __name__ == "__main__":
-    projconfig  = ""
-    globalconfig = ""
+    projconfig      = ""
+    globalconfig    = ""
 
     if (len(sys.argv) >= 3):
         globalconfig = sys.argv[1]
         projconfig = sys.argv[2]
-        
-        sys.path.append("../antlr4")
 
     else:
         print("Usage:\npython projectloader.py <global_config> <project_config>")
         sys.exit(1)
 
-    logging.info("starting pyreel")
-    pyreel = Pyreel()
-    logging.info("starting script executer")
-    executive = Executer()
+    pyreel              = Pyreel()
+    executive           = Executer()
 
-    load_it = Loader(globalconfig, projconfig, executive, pyreel)
-    global_config_obj = load_it.combine(globalconfig)
-    proj_config_obj = load_it.combine(projconfig)
+    load_it             = Loader(globalconfig, projconfig, executive, pyreel)
+    global_config_obj   = load_it.combine(globalconfig)
+    proj_config_obj     = load_it.combine(projconfig)
 
-    logging.info("creating hot keys")
     load_it.make_external_hkeys()
     load_it.make_internal_hkeys()
 
-    logging.info("pyreel is listening! ... or something")
     pyreel.listen()
 
     try:

@@ -6,13 +6,21 @@ author Gus Tropea
 """
 
 import logging
+import sys
 from subprocess import Popen, PIPE
 import importlib.util
 import guimanager
 
-LOG_FILENAME = 'GUIDE.log'
+root = logging.getLogger()
+root.setLevel(logging.DEBUG)
 
-logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
+fh = logging.FileHandler('GUIDE.log')
+fh.setLevel(logging.DEBUG)
+root.addHandler(fh)
+
+ch = logging.StreamHandler(sys.stdout)
+ch.setLevel(logging.DEBUG)
+root.addHandler(ch)
 
 class ExternalTool:
 
@@ -24,11 +32,19 @@ class ExternalTool:
         :param env_variables: enviornment variables being past to the shell
         :return: returns nothing
         """
-        #print("command:", command)
-        #print("working_dir:", working_dir)
-        #print("env_variables:", env_variables)
+        logging.debug("Registering External Command")
+        logging.debug("Command: {}".format(command))
+        logging.debug("Working Dir: {}".format(working_dir))
+        logging.debug("Env Vars: {}".format(env_variables))
+        logging.debug("")
 
-        self.command = command.split(" ")
+        self.command = []
+
+        if (" " in command):
+            self.command = command.split(" ")
+        elif (len(command) > 0):
+            self.command = [command]
+
         self.working_dir = working_dir
         self.env_variables = env_variables
     
@@ -37,57 +53,65 @@ class ExternalTool:
         Method trys to run command. If the command is invalid throw and error. If the command is valid but fails print error to log
 
         """
-        print("Working Dir:", self.working_dir)
+        logging.debug("Executing External CMD: {}".format(" ".join(self.command)))
+        logging.debug("Working Dir: {}".format(self.working_dir))
+        logging.debug("Env Vars: {}".format(self.env_variables))
+        logging.debug("")
         try:
-            runner = Popen(self.command, stdout=PIPE, stderr=PIPE, env=self.env_variables, cwd=self.working_dir)
+            runner = Popen(self.command, stdout=PIPE, stderr=PIPE, env=self.env_variables, cwd=self.working_dir, shell=True)
             data, err = runner.communicate()
             if data:
-                logging.info(" "+self.command+" executed successfully!")
-                runner.close()
+                logging.info(" {} executed successfully!".format(self.command))
             if err:
-                logging.error(" "+err.decode("UTF-8"))
+                logging.error(" {}".format(err.decode("UTF-8")))
         except Exception as e:
             logging.error(" Uhgg! this isn't working!... but {} is not a valid command so thats probably why!".format(self.command), e)
 
 
 class InternalTool:
 
-        def __init__(self, project_config, global_config, path, gui):
-            """
-            Construct a new 'Internal Tools' object.
-            :param projec_config: preset information about the project
-            :param global_config: preset informaiton about the global environment
-            :param path: path to internal python scipt
-            :param gui:  gui object
-            :return: returns nothing
-            """
-        
-            self.project_config = project_config
-            self.global_config = global_config
-            self.path = path
-            self.gui = gui
-            self.mod = None
-        
-        
-        def run(self):
-            """
-            Method starts internal python script.
-            """
-            convert = self.path.replace('\\','/')
-            module_name = ""
-            for i in convert.split('/'):
-                if i.endswith(".py"):
-                    module_name += i.split(".py")[0]
-            try:
-                spec = importlib.util.spec_from_file_location(module_name, self.path)
-                self.mod  = importlib.util.module_from_spec(spec)
-                spec.loader.exec_module(self.mod)
-                self.mod.run(self.global_config, self.project_config, self.gui)
-                logging.info(" "+module_name+" started successfully!")
-            except Exception as e:
-                logging.error(" Problem executing custom user script", e)
+    def __init__(self, project_config, global_config, path, gui):
+        """
+        Construct a new 'Internal Tools' object.
+        :param projec_config: preset information about the project
+        :param global_config: preset informaiton about the global environment
+        :param path: path to internal python scipt
+        :param gui:  gui object
+        :return: returns nothing
+        """
 
-            self.gui.cleanup_windows()
+        logging.debug("Registering User Script")
+        logging.debug("User Script: {}".format(path))
+        logging.debug("")
+
+        self.project_config = project_config
+        self.global_config = global_config
+        self.path = path
+        self.gui = gui
+        self.mod = None
+
+
+    def run(self):
+        """
+        Method starts internal python script.
+        """
+        logging.debug("Executing User Script: {}".format(self.path))
+        logging.debug("")
+
+        convert = self.path.replace('\\','/')
+        module_name = ""
+        for i in convert.split('/'):
+            if i.endswith(".py"):
+                module_name += i.split(".py")[0]
+        try:
+            spec = importlib.util.spec_from_file_location(module_name, self.path)
+            self.mod  = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(self.mod)
+            self.mod.run(self.global_config, self.project_config, self.gui)
+        except Exception as e:
+            logging.error(" Problem executing custom user script", e)
+
+        self.gui.cleanup_windows()
 
 class Executer:
     def __init__(self):
@@ -108,7 +132,6 @@ class Executer:
         """
         tool = ExternalTool(command, working_dir, env_variables)
         self.external_tools.append(tool)
-        logging.info("external tool stored")
         return tool.run
 
     def create_internal_tool(self, project_config, global_config, path):
@@ -118,5 +141,4 @@ class Executer:
         """
         tool = InternalTool(project_config, global_config, path, self.gui_manager)
         self.internal_tools.append(tool)
-        logging.info("Internal Tool stored")
         return tool.run

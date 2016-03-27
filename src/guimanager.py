@@ -1,4 +1,5 @@
 import tkinter
+import logging
 import sys
 if __name__ == "__main__":
     sys.path.append("../")
@@ -23,7 +24,9 @@ class GUIManager:
         elif win_id not in self.windows:
             self.windows[win_id] = window
         else:
-            raise ValueError("Window id {0} is already registered".format(win_id))
+            window.quit()
+            window.destroy()
+            #logging.error("Window id {0} is already registered".format(win_id))
 
 
     def cleanup_windows(self):
@@ -31,7 +34,11 @@ class GUIManager:
         Destroy all the windows
         """
         for win_id in self.windows:
-            win = self.windows[win_id]
-            win.quit()
-            win.destroy()
+            try:
+                win = self.windows[win_id]
+                win.quit()
+                win.destroy()
+            except:
+                pass
+
         self.windows = {}

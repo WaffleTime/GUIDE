@@ -16,10 +16,9 @@ windows:
         executable = "pydoc src"
         ;
 
-    external_hotkey ls
+    external_hotkey dir
         condition LCtrl, l
-        working_directory = "./"
-        executable = "ls"
+        executable = "dir"
         ;
 
     external_hotkey test
@@ -33,7 +32,7 @@ windows:
         environment_variables
             "PATH" = "C:\Program Files\Java\jdk1.8.0_77\bin"
             ;
-        working_directory = "F:\Projects\GUIDE\tools\parser"
-        executable = "build_grammar.bat"
+        working_directory = "tools/parser"
+        executable = "F:\Projects\GUIDE\tools\parser\build_grammar.bat"
         ;
     ;

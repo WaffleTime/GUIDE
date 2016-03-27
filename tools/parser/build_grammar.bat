@@ -1,3 +1,3 @@
 call antlr4 ../../src/Hotkey.g4
 
-call mv Hotkey* ../../src
+call move Hotkey* ../../src

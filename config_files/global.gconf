@@ -1,6 +1,13 @@
 project globe
     ;
-    
+
+global:
+    internal_hotkey window_test
+        condition LCtrl, q
+        executable = "user_scripts/tkinter_example.py"
+        ;
+    ;
+
 windows:
 	namespace Useful_Information
 		"host"      = "localhost",
