@@ -1,0 +1,27 @@
+project guide
+	"root_dir" = "../"
+    ;
+    
+windows:
+	namespace Useful_Information
+		"host"      = "localhost",
+		"port"      = "9999",
+		"username"  = "testUser",
+		"password"  = "testPassword"
+        ;
+
+    hotkey pydoc
+        condition LCtrl, d
+        working_directory = "../"
+        executable $pydoc src
+        ;
+
+    hotkey compile_parser
+        condition LCtrl, p
+        working_directory = "../tools/parser"
+        environment_variables
+            "PATH" = "C:\Program Files\Java\jdk1.8.0_77\bin"
+            ;
+        executable $build_grammar.bat
+        ;
+    ;
