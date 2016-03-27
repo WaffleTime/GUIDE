@@ -39,7 +39,8 @@ class Loader:
 
         for key in intern_hkeys:
             self.intern_hkeys[",".join(key.condition)]=key
-        
+
+        return config
 
     def set_system(self):
         if _platform == "linux" or _platform == "linux2":
@@ -79,13 +80,15 @@ if __name__ == "__main__":
     executive = Executer()
 
     load_it = Loader(globalconfig, projconfig, executive, pyreel)
-    load_it.combine(globalconfig)
-    load_it.combine(projconfig)
+    global_config_obj = load_it.combine(globalconfig)
+    proj_config_obj = load_it.combine(projconfig)
     load_it.make_external_hkeys()
     load_it.make_internal_hkeys()
 
     pyreel.listen()
 
-    while True:
-        time.sleep(1)
-    
+    try:
+        while True:
+            time.sleep(1)
+    except:
+        sys.exit(0)

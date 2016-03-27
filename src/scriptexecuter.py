@@ -16,7 +16,7 @@ logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
 
 class ExternalTool:
 
-    def __init__(self, command, working_dir=".", env_variables={}):
+    def __init__(self, command, working_dir=None, env_variables={}):
         """
         Construct a new 'External Tools' object.
         :param command: the cammand  to runC
@@ -24,11 +24,11 @@ class ExternalTool:
         :param env_variables: enviornment variables being past to the shell
         :return: returns nothing
         """
-        print("command:", command)
-        print("working_dir:", working_dir)
-        print("env_variables:", env_variables)
+        #print("command:", command)
+        #print("working_dir:", working_dir)
+        #print("env_variables:", env_variables)
 
-        self.command = command
+        self.command = command.split(" ")
         self.working_dir = working_dir
         self.env_variables = env_variables
     
@@ -37,19 +37,17 @@ class ExternalTool:
         Method trys to run command. If the command is invalid throw and error. If the command is valid but fails print error to log
 
         """
-        import pdb
-        pdb.set_trace()
-
+        print("Working Dir:", self.working_dir)
         try:
-            runner = Popen(args=self.command, stdout=PIPE, stderr=PIPE, env=self.env_variables, cwd=self.working_dir)
+            runner = Popen(self.command, stdout=PIPE, stderr=PIPE, env=self.env_variables, cwd=self.working_dir)
             data, err = runner.communicate()
             if data:
                 logging.info(" "+self.command+" executed successfully!")
                 runner.close()
             if err:
                 logging.error(" "+err.decode("UTF-8"))
-        except:
-            logging.error(" Uhgg! this isn't working!... but '"+self.command+" is not a valid command so thats probably why!")
+        except Exception as e:
+            logging.error(" Uhgg! this isn't working!... but {} is not a valid command so thats probably why!".format(self.command), e)
 
 
 class InternalTool:
@@ -86,9 +84,9 @@ class InternalTool:
                 spec.loader.exec_module(self.mod)
                 self.mod.run(self.global_config, self.project_config, self.gui)
                 logging.info(" "+module_name+" started successfully!")
-            except:
-                raise
-                
+            except Exception as e:
+                logging.error(" Problem executing custom user script", e)
+
             self.gui.cleanup_windows()
 
 class Executer:
@@ -103,7 +101,7 @@ class Executer:
         
         self.gui_manager = guimanager.GUIManager()
     
-    def create_external_tool(self, command, working_dir=".", env_variables={}):
+    def create_external_tool(self, command, working_dir=None, env_variables={}):
         """
         Method starts external tool and stores it.
         :return: returns function pointer to the objects run method.

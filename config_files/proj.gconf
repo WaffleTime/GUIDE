@@ -1,4 +1,4 @@
-project sample_proj
+project guide
 	"root_dir" = "../"
     ;
     
@@ -12,8 +12,20 @@ windows:
 
     external_hotkey pydoc
         condition LCtrl, d
-        working_directory = "../"
+        working_directory = "./"
         executable = "pydoc src"
+        ;
+
+    external_hotkey ls
+        condition LCtrl, l
+        working_directory = "./"
+        executable = "ls"
+        ;
+
+    external_hotkey test
+        condition LCtrl, t
+        working_directory = "./"
+        executable = "test2.bat"
         ;
 
     external_hotkey compile_parser
@@ -21,7 +33,7 @@ windows:
         environment_variables
             "PATH" = "C:\Program Files\Java\jdk1.8.0_77\bin"
             ;
-        working_directory = "../tools/parser"
+        working_directory = "F:\Projects\GUIDE\tools\parser"
         executable = "build_grammar.bat"
         ;
     ;

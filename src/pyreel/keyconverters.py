@@ -73,12 +73,15 @@ class KeyConverter(object):
                 new_keys_list.append(self.special_key_table[key])
 
             elif key in self.supported_keys:
-                if key.islower():
-                    key = key.upper()
-                    if "LShift" not in new_keys_list:
-                        new_keys_list.extend(["LShift", key])
+                if (len(key) == 1):
+                    if key.islower():
+                        key = key.upper()
+                        new_keys_list.append(key)
                     else:
-                        new_keys_list.extend(key)
+                        if "LShift" not in new_keys_list:
+                            new_keys_list.extend(["LShift", key])
+                        else:
+                            new_keys_list.append(key)
                 else:
                     new_keys_list.append(key)
 
