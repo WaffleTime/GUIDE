@@ -4,7 +4,15 @@ import platform
 import sys
 if __name__ == "__main__":
     sys.path.append("../")
-from pyreel import pyhooked
+
+if platform.system() == "Windows":
+    from pyreel import pyhooked
+
+elif platform.system() == "Linux":
+    from pyreel.pyxhook import pyxhook
+
+else:
+    raise Exception("OS {0} is not supported".format(platform.system()))
 
 class UniversalHook(object):
     """
@@ -20,7 +28,7 @@ class UniversalHook(object):
         """
         raise NotImplemented("UniversalHook is an abstract class")
 
-    def add_hotkey(self, key_list, callb, args):
+    def add_hotkey(self, key_list, callb, args=None):
         """
         Interface for adding a hotkey
 
@@ -30,6 +38,7 @@ class UniversalHook(object):
         :param key_list: The sequence of keys
         :param callb: the callback function
         :param args: the args to send to the callback function
+        :returns: the hotkey id used for identifying the hotkey added
         """
         raise NotImplemented("UniversalHook is an abstract class")
 
@@ -37,6 +46,8 @@ class UniversalHook(object):
     def rm_hotkey(self):
         """
         Interface for removing a hotkey
+
+        :param hotkey_id: the id of the hotkey to remove
         """
         raise NotImplemented("UniversalHook is an abstract class")
 
@@ -66,7 +77,84 @@ class LinuxHook(UniversalHook):
     """
     Interface for collecting keystrokes on Linux
     """
-    
+    class Hotkey:
+        """
+        A class for representing a hotkey instance
+        """
+        def __init__(self, keys_list, callb, args=None):
+            self.keys_list = []
+            self.callb = callb
+            self.args = args
+
+
+        def do_callback(self):
+            """Runs the Hotkey's callback"""
+            if args is not None:
+                self.callb(*args)
+            else:
+                self.callb()
+
+
+    def __init__(self):
+        """
+        Initializes a LinuxHook object
+
+        LinuxHook objects should have a hook of some kind for handling
+        the keystrokes
+        """
+        self.hook = None
+        self.hotkeys = []
+        self.listening = False
+        self.listen_thread = None
+
+
+    def add_hotkey(self, key_list, callb, args=None):
+        """
+        Interface for adding a hotkey
+
+        Will cause the hook to execute callb with args when
+        the associated keys are pressed
+
+        :param key_list: The sequence of keys
+        :param callb: the callback function
+        :param args: the args to send to the callback function
+        :returns: the hotkey id used for identifying the hotkey added
+        """
+        self.hotkeys.append(Hotkey(key_list, callb, args))
+        return len(self.hotkeys)
+
+
+    def rm_hotkey(self, hotkey_id):
+        """
+        Interface for removing a hotkey
+
+        :param hotkey_id: the id of the hotkey to remove
+        """
+        self.hotkeys.pop(hotkey_id)
+
+
+    def listener(self):
+        while self.listening:
+            # do key handling
+            pass
+
+    def listen(self):
+        """
+        Interface for listening to keystrokes and running the provided callback
+        """
+        self.listening = True
+        self.listen_thread = threading.Thread(target=self.listener)
+        self.listen_thread.start()
+
+    def unhook(self):
+        """
+        Interface for "unhooking" all of the keys
+        """
+        self.listening = False
+        if self.listen_thread is not None:
+            self.listen_thread.join()
+            self.listen_thread = None
+        
 
 
 class WindowsHook(UniversalHook):
@@ -143,10 +231,4 @@ class PyReel(object):
         :return: The appropriate UniversalHook object
         """
         return WindowsHook()
-
-
-def do_things(lst):
-    print("Before adding stuff: {0}".format(lst))
-    lst.append("FUCKER! AH AH!")
-    print("After adding stuff: {0}".format(lst))
 
