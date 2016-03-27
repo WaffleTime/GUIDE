@@ -1,6 +1,4 @@
 import sys
-from antlr4 import *
-from antlr4.InputStream import InputStream
 
 from HotkeyLexer import HotkeyLexer
 from HotkeyParser import HotkeyParser
@@ -12,9 +10,6 @@ from data.projectinfo import ProjectInfo
 from data.osconfig import OsConfig
 from data.externaltoolhotkey import ExternalToolHotkey
 from data.customscripthotkey import CustomScriptHotkey
-
-
-import pdb
 
 class HotkeyEmitter(HotkeyListener):
     def __init__(self):
@@ -134,10 +129,3 @@ def parse(file_path):
     walker.walk(listener, tree)
 
     return listener.configuration
-        
-        
-if __name__ == '__main__':
-    if (len(sys.argv) > 1):
-        configuration = parse(sys.argv[1])
-    else:
-        print("Usage:\npython configparser.py <onfig_path>")

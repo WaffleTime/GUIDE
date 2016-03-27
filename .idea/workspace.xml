@@ -2,13 +2,77 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a42578f4-cf47-4b91-ab97-cb5aba0b29f0" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/Hotkey.g4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/Hotkey.tokens" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/HotkeyLexer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/HotkeyLexer.tokens" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/HotkeyListener.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/HotkeyParser.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/BufferedTokenStream.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/CommonTokenFactory.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/CommonTokenStream.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/FileStream.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/InputStream.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/IntervalSet.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/LL1Analyzer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/Lexer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/ListTokenSource.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/Parser.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/ParserInterpreter.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/ParserRuleContext.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/PredictionContext.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/Recognizer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/RuleContext.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/Token.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/Utils.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/ATN.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/ATNConfig.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/ATNConfigSet.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/ATNDeserializationOptions.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/ATNDeserializer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/ATNSimulator.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/ATNState.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/ATNType.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/LexerATNSimulator.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/LexerAction.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/LexerActionExecutor.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/ParserATNSimulator.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/PredictionMode.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/SemanticContext.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/Transition.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/atn/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/dfa/DFA.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/dfa/DFASerializer.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/dfa/DFAState.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/dfa/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/error/DiagnosticErrorListener.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/error/ErrorListener.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/error/ErrorStrategy.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/error/Errors.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/error/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/tree/Chunk.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/tree/ParseTreeMatch.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/tree/ParseTreePattern.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/tree/ParseTreePatternMatcher.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/tree/RuleTagToken.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/tree/TokenTagToken.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/tree/Tree.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/tree/Trees.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/tree/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/xpath/XPath.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/antlr4/xpath/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/configparser.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/data/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/data/configuration.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/data/customscripthotkey.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/data/externaltoolhotkey.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/data/osconfig.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/data/projectinfo.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/parser/test_config/config.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/parser/Hotkey.g4" afterPath="$PROJECT_DIR$/src/parser/Hotkey.g4" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/parser/Hotkey.tokens" afterPath="$PROJECT_DIR$/src/parser/Hotkey.tokens" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/parser/HotkeyLexer.py" afterPath="$PROJECT_DIR$/src/parser/HotkeyLexer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/parser/HotkeyLexer.tokens" afterPath="$PROJECT_DIR$/src/parser/HotkeyLexer.tokens" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/parser/HotkeyParser.py" afterPath="$PROJECT_DIR$/src/parser/HotkeyParser.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/parser/configparser.py" afterPath="$PROJECT_DIR$/src/parser/configparser.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/parser/build_grammar.bat" afterPath="$PROJECT_DIR$/tools/parser/build_grammar.bat" />
     </list>
     <ignored path="GUIDE.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,103 +93,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="configuration.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/parser/data/configuration.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="configparser.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/parser/configparser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="726">
-              <caret line="140" column="42" selection-start-line="140" selection-start-column="42" selection-end-line="140" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="projectinfo.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/parser/data/projectinfo.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/parser/data/__init__.py">
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="osconfig.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/parser/data/osconfig.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="39" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Hotkey.g4" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/parser/Hotkey.g4">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="77" column="27" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/parser/test_config/config.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HotkeyParser.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/parser/HotkeyParser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7956">
-              <caret line="469" column="19" selection-start-line="469" selection-start-column="19" selection-end-line="469" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="externaltoolhotkey.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/parser/data/externaltoolhotkey.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="customscripthotkey.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/parser/data/customscripthotkey.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -147,8 +119,13 @@
         <option value="$PROJECT_DIR$/src/parser/data/osconfig.py" />
         <option value="$PROJECT_DIR$/src/parser/data/projectinfo.py" />
         <option value="$PROJECT_DIR$/src/parser/Hotkey.g4" />
-        <option value="$PROJECT_DIR$/src/parser/configparser.py" />
         <option value="$PROJECT_DIR$/src/parser/test_config/config.txt" />
+        <option value="$PROJECT_DIR$/tools/parser/build_grammar.bat" />
+        <option value="$PROJECT_DIR$/tools/parser/updateimport.py" />
+        <option value="$PROJECT_DIR$/src/parser/HotkeyParser.py" />
+        <option value="$PROJECT_DIR$/src/parser/configparser.py" />
+        <option value="$PROJECT_DIR$/src/main.py" />
+        <option value="$PROJECT_DIR$/src/__init__.py" />
       </list>
     </option>
   </component>
@@ -213,7 +190,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="tools" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -232,36 +209,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test_config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GUIDE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GUIDE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="parser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -431,9 +378,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -483,9 +430,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1547">
           <caret line="91" column="0" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -581,6 +526,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -596,9 +542,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1241">
           <caret line="79" column="66" selection-start-line="79" selection-start-column="66" selection-end-line="79" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -618,22 +562,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/parser/HotkeyListener.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/parser/tmp" />
-    <entry file="file://$PROJECT_DIR$/src/parser/HotkeyParser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7956">
-          <caret line="469" column="19" selection-start-line="469" selection-start-column="19" selection-end-line="469" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/parser/data/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -658,10 +587,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/parser/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parser/test_config/config.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/parser/build_grammar.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="32" selection-start-line="4" selection-start-column="32" selection-end-line="4" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parser/HotkeyLexer.tokens">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/parser/Hotkey.g4">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
           <caret line="77" column="27" selection-start-line="77" selection-start-column="27" selection-end-line="77" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parser/antlr4/BufferedTokenStream.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="68" column="9" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -674,14 +643,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/parser/data/configuration.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/parser/data/projectinfo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -690,20 +651,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/parser/configparser.py">
+    <entry file="file://$PROJECT_DIR$/src/parser/data/configuration.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
-          <caret line="140" column="42" selection-start-line="140" selection-start-column="42" selection-end-line="140" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="102">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/parser/test_config/config.txt">
+    <entry file="file://$PROJECT_DIR$/tools/parser/updateimport.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parser/HotkeyParser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
+          <caret line="8" column="55" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parser/configparser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parser/HotkeyListener.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="38" selection-start-line="32" selection-start-column="38" selection-end-line="32" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="42" selection-start-line="1" selection-start-column="42" selection-end-line="1" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/parser/HotkeyLexer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HotkeyListener.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
