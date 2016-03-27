@@ -81,6 +81,11 @@ class WindowsHook(UniversalHook):
         self.listen_thread = None
 
 
+    def __del__(self):
+        """Have the hook stop listening so resources are cleaned up"""
+        self.unhook()
+
+
     def add_hotkey(self, key_list, callb, args=None):
         """
         Interface for adding a hotkey
@@ -109,14 +114,19 @@ class WindowsHook(UniversalHook):
         """
         Listen to keystrokes and run the provided callback
         """
-        self.hook.listen()
+        self.listen_thread = threading.Thread(target=self.hook.listen)
+        self.listen_thread.start()
 
 
     def unhook(self):
         """
         Interface for stopping the key listening
         """
-        pass
+        if self.listen_thread is not None:
+            self.hook.stop_listening()
+            self.listen_thread.join()
+            self.listen_thread = None
+
 
 class PyReel(object):
     """
@@ -134,5 +144,9 @@ class PyReel(object):
         """
         return WindowsHook()
 
-if __name__ == "__main__":
-    hook = WindowsHook()
+
+def do_things(lst):
+    print("Before adding stuff: {0}".format(lst))
+    lst.append("FUCKER! AH AH!")
+    print("After adding stuff: {0}".format(lst))
+
