@@ -81,6 +81,8 @@ class InternalTool:
                 logging.info(" "+module_name+" started successfully!")
             except:
                 raise
+                
+            self.gui.cleanup_windows()
 
 class Executer:
     def __init__(self):

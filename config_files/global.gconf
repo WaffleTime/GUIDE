@@ -10,7 +10,7 @@ windows:
 		"password"  = "testPassword"
         ;
 
-    hotkey pydoc
+    hotkey explorer
         condition LCtrl, r
         working_directory = "./"
         executable $explorer ./
