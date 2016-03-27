@@ -37,6 +37,9 @@ class ExternalTool:
         Method trys to run command. If the command is invalid throw and error. If the command is valid but fails print error to log
 
         """
+        import pdb
+        pdb.set_trace()
+
         try:
             runner = Popen(args=self.command, stdout=PIPE, stderr=PIPE, env=self.env_variables, cwd=self.working_dir)
             data, err = runner.communicate()

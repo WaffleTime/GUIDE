@@ -55,7 +55,7 @@ class HotkeyParser ( Parser ):
     sharedContextCache = PredictionContextCache()
 
     literalNames = [ "<INVALID>", "'project'", "','", "';'", "'true'", "'false'", 
-                     "'null'", "'namespace'", "'external_hotkey'", "'execute'", 
+                     "'null'", "'namespace'", "'external_hotkey'", "'executable'", 
                      "'environment_variables'", "'working_directory'", "'internal_hotkey'", 
                      "'condition'" ]
 

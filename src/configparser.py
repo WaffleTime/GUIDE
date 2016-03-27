@@ -32,14 +32,14 @@ class HotkeyEmitter(HotkeyListener):
         """
         self.values[ctx] = ctx.getText().strip('"')
 
-    def enterAnObject(self, ctx:HotkeyParser.AnObjectContext):
+    def exitAnObject(self, ctx:HotkeyParser.AnObjectContext):
         """
         Denotes the entry of a non-empty dictionary context.
         """
         dict = {}
         for pair_ctx in ctx.pair():
-            key         = pair_ctx.STRING().getText()
-            value       = self.values.get(pair_ctx.value(), None)
+            key         = pair_ctx.STRING().getText().strip("\"")
+            value       = self.values.get(pair_ctx.value(), "")
             dict[key]   = value
 
         self.dictionaries[ctx] = dict
@@ -97,9 +97,6 @@ class HotkeyEmitter(HotkeyListener):
                     hotkey.working_dir  = working_dir_ctx.STRING().getText().strip("\"")
 
                 hotkey.executable = hotkey_ctx.STRING().getText().strip("\"")
-
-                import pdb
-                pdb.set_trace()
 
                 os_config.external_tool_hotkeys[hotkey.name] = hotkey
 

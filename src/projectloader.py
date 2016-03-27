@@ -20,24 +20,24 @@ class Loader:
         osconfigs   = config.os_configs
 
         system_config = osconfigs.get(self.set_system(), None)
-        global_config = osconfigs.get("global",None)
+        global_config = osconfigs.get("global", None)
 
         extern_hkeys = []
         intern_hkeys = []
 
         if (system_config != None):
-            extern_hkeys += system_config.extern_tool_hotkeys.values()
+            extern_hkeys += system_config.external_tool_hotkeys.values()
             intern_hkeys += system_config.custom_script_hotkeys.values()
 
         elif (global_config != None):
-            extern_hkeys += global_config.extern_tool_hotkeys.values()
+            extern_hkeys += global_config.external_tool_hotkeys.values()
             intern_hkeys += global_config.custom_script_hotkeys.values()
 
         for key in extern_hkeys:
-            self.extern_hkeys[set(key.condition)]=key
+            self.extern_hkeys[",".join(key.condition)]=key
 
         for key in intern_hkeys:
-            self.intern_hkeys[set(key.condition)]=key
+            self.intern_hkeys[",".join(key.condition)]=key
         
 
     def set_system(self):
@@ -46,7 +46,7 @@ class Loader:
         elif _platform == "darwin":
             return "osx"
         elif _platform == "win32":
-            return "win32"
+            return "windows"
         
 
     def make_external_hkeys(self):
@@ -57,6 +57,7 @@ class Loader:
     def make_internal_hkeys(self):
         for key in self.intern_hkeys.values():
             pointer=self.executer.create_internal_tool(self.proj_config, self.global_config, key.executable)
+            self.pyreel.add_hotkey(key.condition, pointer)
 
 if __name__ == "__main__":
     projconfig  = ""

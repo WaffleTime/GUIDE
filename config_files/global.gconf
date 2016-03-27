@@ -13,6 +13,6 @@ windows:
     external_hotkey explorer
         condition LCtrl, r
         working_directory = "./"
-        execute = "explorer ./"
+        executable = "explorer ./"
         ;
     ;
