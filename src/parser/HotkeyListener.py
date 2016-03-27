@@ -71,12 +71,12 @@ class HotkeyListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by HotkeyParser#os_config.
-    def enterOs_config(self, ctx:HotkeyParser.Os_configContext):
+    # Enter a parse tree produced by HotkeyParser#config.
+    def enterConfig(self, ctx:HotkeyParser.ConfigContext):
         pass
 
-    # Exit a parse tree produced by HotkeyParser#os_config.
-    def exitOs_config(self, ctx:HotkeyParser.Os_configContext):
+    # Exit a parse tree produced by HotkeyParser#config.
+    def exitConfig(self, ctx:HotkeyParser.ConfigContext):
         pass
 
 
@@ -89,21 +89,39 @@ class HotkeyListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by HotkeyParser#hotkey.
-    def enterHotkey(self, ctx:HotkeyParser.HotkeyContext):
+    # Enter a parse tree produced by HotkeyParser#external_tool_hotkey.
+    def enterExternal_tool_hotkey(self, ctx:HotkeyParser.External_tool_hotkeyContext):
         pass
 
-    # Exit a parse tree produced by HotkeyParser#hotkey.
-    def exitHotkey(self, ctx:HotkeyParser.HotkeyContext):
+    # Exit a parse tree produced by HotkeyParser#external_tool_hotkey.
+    def exitExternal_tool_hotkey(self, ctx:HotkeyParser.External_tool_hotkeyContext):
         pass
 
 
-    # Enter a parse tree produced by HotkeyParser#sequence_condition.
-    def enterSequence_condition(self, ctx:HotkeyParser.Sequence_conditionContext):
+    # Enter a parse tree produced by HotkeyParser#environment_vars.
+    def enterEnvironment_vars(self, ctx:HotkeyParser.Environment_varsContext):
         pass
 
-    # Exit a parse tree produced by HotkeyParser#sequence_condition.
-    def exitSequence_condition(self, ctx:HotkeyParser.Sequence_conditionContext):
+    # Exit a parse tree produced by HotkeyParser#environment_vars.
+    def exitEnvironment_vars(self, ctx:HotkeyParser.Environment_varsContext):
+        pass
+
+
+    # Enter a parse tree produced by HotkeyParser#working_dir.
+    def enterWorking_dir(self, ctx:HotkeyParser.Working_dirContext):
+        pass
+
+    # Exit a parse tree produced by HotkeyParser#working_dir.
+    def exitWorking_dir(self, ctx:HotkeyParser.Working_dirContext):
+        pass
+
+
+    # Enter a parse tree produced by HotkeyParser#custom_script_hotkey.
+    def enterCustom_script_hotkey(self, ctx:HotkeyParser.Custom_script_hotkeyContext):
+        pass
+
+    # Exit a parse tree produced by HotkeyParser#custom_script_hotkey.
+    def exitCustom_script_hotkey(self, ctx:HotkeyParser.Custom_script_hotkeyContext):
         pass
 
 

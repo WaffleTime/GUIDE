@@ -2,7 +2,7 @@
 grammar Hotkey;
 
 project
-    : project_info (os_config)*
+    : project_info (config)*
     ;
 
 project_info
@@ -12,7 +12,8 @@ project_info
 dictionary
     :   pair (',' pair)* ';'        # AnObject
     |   ';'                         # EmptyObject
-    ;   
+    ;
+
 
 pair:   STRING EQUAL value ;
 
@@ -24,30 +25,50 @@ value
     |   'null'      # Atom
     ;
 
-os_config
-    :   OPERATING_SYSTEM ((namespace) | (hotkey))* ';'
+config
+    :   OPERATING_SYSTEM
+            ((namespace | external_tool_hotkey | custom_script_hotkey))*
+            ';'
     ;
-    
+
 namespace
     :   'namespace' NAME dictionary
     ;
-    
-hotkey
-    : 'hotkey' NAME (sequence_condition | simultaneous_condition) ';'
+
+external_tool_hotkey
+    : 'hotkey' NAME
+          simultaneous_condition
+          (environment_vars)?
+          (working_dir)?
+          'execute' '$' COMMAND
+          ';'
     ;
-    
-sequence_condition
-    : 'condition' 'is' NAME '->' NAME
+
+environment_vars
+    : 'environment_variables' dictionary
     ;
-    
+
+working_dir
+    : 'working_directory' EQUAL STRING
+    ;
+
+custom_script_hotkey
+    : 'hotkey' NAME
+          simultaneous_condition
+          'execute' '>' COMMAND
+          ';'
+    ;
+
 simultaneous_condition
-    : 'condition' 'is' NAME '&' NAME
+    : 'condition' EQUAL NAME (',' NAME)*
     ;
 
 
 EQUAL : ('is' | '=');
-    
-OPERATING_SYSTEM : ('global' | 'windows:' | 'linux:' | 'osx');
+
+OPERATING_SYSTEM : ('global:' | 'windows:' | 'linux:' | 'osx:');
+
+COMMAND : ~('\r' | '\n')+ ;
 
 NAME : ~('\r' | '\n' | '"' | ' ')+ ;
 
@@ -58,9 +79,8 @@ NUMBER
     |   '-'? INT EXP            // 1e10 -3e4
     |   '-'? INT                // -3, 45
     ;
+
 fragment INT :   '0' | '1'..'9' '0'..'9'* ; // no leading zeros
 fragment EXP :   [Ee] [+\-]? INT ; // \- since - means "range" inside [...]
 
-WS : SPACE+ -> skip;
-
-fragment SPACE : '\t' | ' ' | '\r' | '\n'| '\u000C';
+WS  :   [ \t\n\r]+ -> skip ;
