@@ -254,13 +254,11 @@ class WindowsHook(UniversalHook):
 
 Pyreel = None
 
+os_hooks = {"Windows" : WindowsHook}
+
 if platform.system() == "Windows":
     from pyreel import pyhooked
     Pyreel = WindowsHook
-
-elif platform.system() == "Linux":
-    from pyreel.pyxhook import pyxhook
-    Pyreel = LinuxHook
 
 else:
     raise Exception("OS {0} is not supported".format(platform.system()))
