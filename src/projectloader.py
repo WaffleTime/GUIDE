@@ -1,5 +1,6 @@
 from sys import platform as _platform
 import sys
+import time
 import configparser
 from scriptexecuter import *
 from pyreel.keyfisher import *
@@ -84,4 +85,7 @@ if __name__ == "__main__":
     load_it.make_internal_hkeys()
 
     pyreel.listen()
+
+    while True:
+        time.sleep(1)
     
