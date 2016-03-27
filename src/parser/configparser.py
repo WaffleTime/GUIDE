@@ -13,8 +13,6 @@ from data.osconfig import OsConfig
 from data.externaltoolhotkey import ExternalToolHotkey
 from data.customscripthotkey import CustomScriptHotkey
 
-import pdb
-
 
 class HotkeyEmitter(HotkeyListener):
     def __init__(self):
@@ -77,11 +75,11 @@ class HotkeyEmitter(HotkeyListener):
         for config_ctx in ctx.config():
             os_config = OsConfig(self.current_os)
 
-            for namespace_ctx in ctx.namespace():
+            for namespace_ctx in config_ctx.namespace():
                 namespace_name                          = namespace_ctx.NAME().getText()
                 os_config.dictionaries[namespace_name]  = self.dictionaries.get(namespace_ctx, {})
 
-            for hotkey_ctx in ctx.external_tool_hotkey():
+            for hotkey_ctx in config_ctx.external_tool_hotkey():
                 hotkey              = ExternalToolHotkey()
 
                 hotkey.name         = hotkey_ctx.NAME().getText()
@@ -92,6 +90,7 @@ class HotkeyEmitter(HotkeyListener):
                 conditions_ctx      = hotkey_ctx.simultaneous_condition()
                 conditions          = []
 
+                asdfasdfasdfasdf
                 for condition_ctx in conditions_ctx.NAME():
                     conditions.append(condition_ctx.NAME().getText())
 
@@ -100,11 +99,11 @@ class HotkeyEmitter(HotkeyListener):
                 working_dir_ctx     = hotkey_ctx.working_dir()
                 hotkey.working_dir  = working_dir_ctx.STRING()
 
-                hotkey.executable   = hotkey_ctx.COMMAND()
+                hotkey.executable   = hotkey_ctx.NAME().getText()
 
                 os_config.hotkeys[hotkey.name] = hotkey
 
-            for hotkey_ctx in ctx.custom_script_hotkey():
+            for hotkey_ctx in config_ctx.custom_script_hotkey():
                 hotkey              = CustomScriptHotkey()
 
                 hotkey.name = hotkey_ctx.NAME().getText()
@@ -142,7 +141,5 @@ def parse(file_path):
 if __name__ == '__main__':
     if (len(sys.argv) > 1):
         configuration = parse(sys.argv[1])
-
-        pdb.set_trace()
     else:
         print("Usage:\npython configparser.py <onfig_path>")

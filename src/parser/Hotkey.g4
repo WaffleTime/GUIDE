@@ -55,7 +55,7 @@ working_dir
 custom_script_hotkey
     : 'hotkey' NAME
           simultaneous_condition
-          'execute' '>' COMMAND
+          'execute' '>' NAME
           ';'
     ;
 
